@@ -34,7 +34,7 @@ Abilities & Growth Expectations (Technical strengths and areas for desired impro
 * Reinforce React & React Testing
 * Learn OAauth!
 * If we successfully get OAuth working that is an absolute win!
-
+ 
 Workload Expectations (What features do we each want to work on?):
 * Make sure you are contributing
 * Make sure everyone gets to contribute
