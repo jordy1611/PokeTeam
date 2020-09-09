@@ -44,7 +44,7 @@ Workflow Expectations (Git workflow/Tools/Code Review/Reviewing Pull Requests/De
 * PR template
   * Try to have issue for new feature (basically bullet points in iterations)
   * Try to have all group members review PR's, min should be 2. 
-    * Submitter does not merge PR
+ 	* Submitter does not merge PR
 Pomodoro Break Schedule:
 * 50/10
 * Natural breaks
