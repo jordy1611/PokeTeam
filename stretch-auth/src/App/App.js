@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom
 import Login from '../Login/Login'
 import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
+import FormContainer from '../FormContainer/FormContainer'
 import './App.css';
 const firebase = require('firebase');
 const firebaseui = require('firebaseui');
@@ -74,6 +75,14 @@ class App extends Component {
           return(
             <Login
             />
+          )
+        }}
+        />
+        <Route
+        exact path='/poke-forms'
+        render={() => {
+          return (
+            <FormContainer/>
           )
         }}
         />

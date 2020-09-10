@@ -1,8 +1,9 @@
 import React from 'react';
 import PokeCard from '../PokeCard/PokeCard'
+import { Link } from 'react-router-dom'
 import './CardContainer.css'
 
-
+// needs conditional renders for user & pokemon + user & no pokemon
 const CardContainer = (props) => {
   return (
     <section className='card-container'>
@@ -12,7 +13,7 @@ const CardContainer = (props) => {
     {props.isCurrentUser &&
       <div className='no-team-display'>
         <p className='no-team-message'>You Don't Have A Poke Team</p>
-        <button className='no-team-button'>Make a Poke Team!</button>
+        <Link to='/poke-forms'><button className='no-team-button'>Make a Poke Team!</button></Link>
       </div>
     }
       <PokeCard/>

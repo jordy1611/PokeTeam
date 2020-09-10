@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PokeCard.css'
+import './PokeForm.css'
 
 
 class PokeForm extends Component {
