@@ -13,7 +13,7 @@ class FormContainer extends Component {
   }
   render() {
     return (
-      <section className='card-container'>
+      <section className='form-container'>
         <PokeForm/>
         <PokeForm/>
         <PokeForm/>
