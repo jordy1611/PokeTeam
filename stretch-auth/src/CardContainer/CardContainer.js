@@ -1,5 +1,5 @@
 import React from 'react';
-import PokeCard from 'PokeCard'
+import PokeCard from '../PokeCard/PokeCard'
 import './CardContainer.css'
 
 

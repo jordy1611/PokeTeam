@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
-import logo from './logo.svg';
+import Header from '../Header/Header'
+import CardContainer from '../CardContainer/CardContainer'
 import './App.css';
 
-class App() extends Component {
+// home route should be form-team
+
+class App extends Component {
   constructor() {
+    super();
     this.state = {
 
     }
