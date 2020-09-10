@@ -10,6 +10,8 @@ const CardContainer = () => {
       <PokeCard/>
       <PokeCard/>
       <PokeCard/>
+      <PokeCard/>
+      <PokeCard/>
     </section>
   )
 }

@@ -17,6 +17,8 @@ class FormContainer extends Componet {
         <PokeForm/>
         <PokeForm/>
         <PokeForm/>
+        <PokeForm/>
+        <PokeForm/>
       </section>
     )
   }
