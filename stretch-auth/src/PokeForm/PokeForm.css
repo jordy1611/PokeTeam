@@ -1,3 +1,26 @@
+.poke-form-fieldset{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-size: 1.5em;
+  width: 10em;
+  height: 8em;
+}
+
+.poke-form-fieldset > * {
+  margin: .2em 0;
+}
+
+.poke-form-fieldset > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.poke-form-fieldset > button {
+  margin: .5em 20% 0 15%;
+  font-size: .9em;
+  width: 7.5em;
+}
+
 .poke-form {
-  
 }

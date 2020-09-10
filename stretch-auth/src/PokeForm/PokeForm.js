@@ -13,18 +13,22 @@ class PokeForm extends Component {
   render() {
     return (
       <form className='poke-form'>
-        <fieldset>
+        <fieldset className='poke-form-fieldset'>
           <legend>Pick A Pokemon</legend>
-            <label htmlFor='pokemon'>
-              Pokemon
-            </label>
-            <input type='text' id='pokemon' placeholder='Choose A Pokemon'>
-            </input>
-            <label htmlFor='poke-name'>
-              Name
-            </label>
-            <input type='text' id='poke-name' placeholder='Name Your Pokemon'>
-            </input>
+            <div>
+              <label htmlFor='pokemon'>
+                Pokemon
+              </label>
+              <input type='text' id='pokemon' placeholder='Choose A Pokemon'>
+              </input>
+            </div>
+            <div>
+              <label htmlFor='poke-name'>
+                Name
+              </label>
+              <input type='text' id='poke-name' placeholder='Name Your Pokemon'>
+              </input>
+            </div>
             <button onClick={() => console.log('find poke')}>Find Pokemon</button>
         </fieldset>
       </form>
