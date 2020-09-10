@@ -49,7 +49,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: {}
+      currentUser: 'no user'
     }
   }
 
@@ -68,15 +68,6 @@ class App extends Component {
               />
             )
           }}
-        />
-        <Route
-        exact path='/login'
-        render={() => {
-          return(
-            <Login
-            />
-          )
-        }}
         />
         <Route
         exact path='/poke-forms'
