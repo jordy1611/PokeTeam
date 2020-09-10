@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
+import Login from '../Login/Login'
 import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
 import './App.css';
@@ -58,13 +59,22 @@ class App extends Component {
         <Header
         />
         <Route
-          exact path ='/'
+          exact path='/'
           render={() => {
             return(
               <CardContainer
               />
             )
           }}
+        />
+        <Route
+        exact path='/login'
+        render={() => {
+          return(
+            <Login
+            />
+          )
+        }}
         />
         </main>
       </Router>
