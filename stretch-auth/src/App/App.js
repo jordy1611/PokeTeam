@@ -48,7 +48,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      currentUser: {}
     }
   }
 
@@ -63,6 +63,7 @@ class App extends Component {
           render={() => {
             return(
               <CardContainer
+              isCurrentUser={this.state.currentUser !== 'no user'}
               />
             )
           }}

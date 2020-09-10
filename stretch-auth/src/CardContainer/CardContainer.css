@@ -4,3 +4,32 @@
   justify-content: space-evenly;
   margin-top: 3em;
 }
+
+.no-user-message {
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0 0 1em 0
+}
+
+.no-team-display {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-team-message {
+  font-size: 2em;
+  font-weight: bold;
+}
+.no-team-button {
+  font-size: 7em;
+  font-weight: bolder;
+  width: 8em;
+  height: 2.5em;
+  align-self: center;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
