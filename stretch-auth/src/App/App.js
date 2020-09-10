@@ -109,7 +109,7 @@ class App extends Component {
           exact path ='/'
           render={() => {
             return(
-              <CardContainer
+              <CardContainer bulbasaur={this.state.pokemon[0]}
               />
             )
           }}
