@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import './Login.css'
+import { secrets } from '../secrets';
 import { firebaseui } from '../App/App';
-import {StyledFirebaseAuth} from 'react-firebaseui';
-
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+// import firebase from 'firebase';
 let firebase = require('firebase');
+console.log(secrets);
+
+
+firebase.initializeApp(secrets);
 
 const uiConfig = {
   signInOptions: [
