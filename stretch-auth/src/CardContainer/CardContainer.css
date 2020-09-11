@@ -1,0 +1,50 @@
+A {text-decoration: none}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}
+
+
+.no-user-message {
+  color: black;
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0 0 1em 0
+}
+
+.no-user-message:hover {
+  color: green;
+}
+
+.no-team-display {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-team-message {
+  font-size: 2em;
+  font-weight: bold;
+}
+.no-team-button {
+  font-size: 7em;
+  font-weight: bolder;
+  width: 8em;
+  height: 2.5em;
+  align-self: center;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+.poke-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}

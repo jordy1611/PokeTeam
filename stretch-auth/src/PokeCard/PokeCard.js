@@ -1,13 +1,18 @@
 import React from 'react';
 import './PokeCard.css'
 
-const PokeCard = () => {
+const PokeCard = (props) => {
   return (
-    <article className='poke-card'>
-      <p>PokeName</p>
-      <p>PokeType</p>
-      <p>PokePic</p>
-    </article>
+    <section>
+    {props.bulbasaur &&
+      <article className='poke-card'>
+        <p>PokeName</p>
+        <p>PokeType</p>
+        <p>PokePic</p>
+        <img src={props.bulbasaur.sprite}/>
+      </article>
+    }
+    </section>
   )
 }
 
