@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
+import Login from '../Login/Login'
 import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
+import FormContainer from '../FormContainer/FormContainer'
 import './App.css';
 const firebase = require('firebase');
 const firebaseui = require('firebaseui');
@@ -48,6 +50,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      currentUser: 'no user'
       pokemon: []
     }
   }
@@ -106,13 +109,23 @@ class App extends Component {
         <Header
         />
         <Route
-          exact path ='/'
+          exact path='/'
           render={() => {
             return(
-              <CardContainer bulbasaur={this.state.pokemon[0]}
+              <CardContainer
+              isCurrentUser={this.state.currentUser !== 'no user'}
+              bulbasaur={this.state.pokemon[0]}
               />
             )
           }}
+        />
+        <Route
+        exact path='/poke-forms'
+        render={() => {
+          return (
+            <FormContainer/>
+          )
+        }}
         />
         </main>
       </Router>
