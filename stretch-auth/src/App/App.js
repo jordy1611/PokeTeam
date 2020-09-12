@@ -13,11 +13,11 @@ const firebaseui = require('firebaseui');
 firebase.initializeApp(secrets);
 
 export const uiConfig = {
-  signInFlow:'popup', 
+  signInFlow:'popup',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID
-  ], 
+  ],
   callbacks: {
     signInSuccess: () => false
   }
@@ -27,7 +27,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: 'n user',
+      currentUser: 'no user',
       pokemon: [],
       isSignedIn: false,
     }
@@ -36,7 +36,7 @@ class App extends Component {
   componentDidMount() {
     this.getAllPokemon();
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn:!!user })
+      this.setState({ isSignedIn:!!user, currentUser: user ? user : "no user" })
       console.log('user', user)
     })
   }
@@ -98,7 +98,7 @@ class App extends Component {
           exact path ='/login'
           render={() => {
             return (
-              <Login 
+              <Login
                 uiConfig={ uiConfig }
                 firebaseAuth={firebase.auth()}
               />
@@ -109,7 +109,7 @@ class App extends Component {
         exact path='/poke-forms'
         render={() => {
           return (
-            <FormContainer/>
+            <FormContainer allPokemon={this.state.pokemon}/>
           )
         }}
         />
