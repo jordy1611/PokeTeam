@@ -1,28 +1,57 @@
 A {text-decoration: none}
 
 .header{
-  background-color: grey;
+  background-color: #3c5aa6;
   min-height: 7em;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  border-bottom: double 1em #E19720;
+
+  /* border-top: solid .8em #E19720 */
+}
+
+.header-div {
+  display: flex;
+  margin: 1em 2em;
+}
+
+.header-icon{
+  width: 7em;
+  height: 7em;
+}
+
+.header-icon:hover {
+  transform: scale(1.2) rotate(20deg)
 }
 
 .page-name {
-  font-size: 2.5em;
-  color: black;
+  font-size: 4.5em;
+  font-weight: bold;
+  color: #FAD61D;
   text-decoration: none;
+  margin:  .3em 0 0 .4em
 }
 
 .page-name:hover {
-  color: green;
+  font-weight: bolder;
+  transform: scale(1.1) rotate(5deg);
 }
 
 .header-button {
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
   max-height: 1.9em;
   width: 5em;
   align-self: flex-end;
   /* margin-bottom: 1em; */
-  margin-top: 1em;
+  margin: 1.5em 2em 0 0;
+  background-color: #FAD61D;
+  color: #E19720;
+  border: solid .15em;
+  border-radius: .2em .5em;
+}
+
+.header-button:hover {
+  transform: scale(1.1)
 }
