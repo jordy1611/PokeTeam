@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PokeForm from '../PokeForm/PokeForm'
+import PokeCard from '../PokeCard/PokeCard'
 import { Link } from 'react-router-dom'
 import './FormContainer.css'
 
@@ -32,13 +33,36 @@ class FormContainer extends Component {
   render() {
     return (
       <section className='form-container'>
-
-        <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot1"}/>
-        <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot2"}/>
-        <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot3"}/>
-        <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot4"}/>
-        <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot5"}/>
-        <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot6"}/>
+        {(this.state.slot1.pokemon &&
+          <PokeCard bulbasaur={this.state.slot1}/>
+        ) ||
+          <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot1"}/>
+        }
+        {(this.state.slot2.pokemon &&
+          <PokeCard bulbasaur={this.state.slot2}/>
+        ) ||
+          <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot2"}/>
+        }
+        {(this.state.slot3.pokemon &&
+          <PokeCard bulbasaur={this.state.slot3}/>
+        ) ||
+          <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot3"}/>
+        }
+        {(this.state.slot4.pokemon &&
+          <PokeCard bulbasaur={this.state.slot4}/>
+        ) ||
+          <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot4"}/>
+        }
+        {(this.state.slot5.pokemon &&
+          <PokeCard bulbasaur={this.state.slot5}/>
+        ) ||
+          <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot5"}/>
+        }
+        {(this.state.slot6.pokemon &&
+          <PokeCard bulbasaur={this.state.slot6}/>
+        ) ||
+          <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot6"}/>
+        }
       </section>
     )
   }
