@@ -12,10 +12,14 @@ console.log(secrets);
 firebase.initializeApp(secrets);
 
 const uiConfig = {
+  signInFlow:'popup', 
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID
-  ]
+  ], 
+  callbacks: {
+    signInSuccess: () => false
+  }
 }
 
 
@@ -24,8 +28,16 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      isSignedIn: false,
     }
+    
+  }
+  
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn:!!user })
+      console.log('user', user)
+    })
   }
 
   render() {
