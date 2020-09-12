@@ -2,17 +2,56 @@
   margin: 2em 4em;
 }
 
+.poke-form:hover {
+  transform: scale(1.5);
+  margin-bottom: 4em;
+  margin-top: 4em;
+}
+
 .poke-form-fieldset{
   display: flex;
   flex-direction: column;
-  align-content: center;
+  /* align-content: center; */
+  /* align-items: center; */
   font-size: 1.5em;
-  width: 10em;
-  height: 8em;
+  width: 12em;
+  height: 12em;
+  /* background-color: #f0f0f0; */
+  background: linear-gradient(#f00000 0%, #f00000 45%, #222224 0%, #222224 50%,  #f0f0f0 0%, #f0f0f0 50%);
+  border: solid #222224 .5em;
+  border-radius: 50%
+}
+ input {
+   width: 10em;
+   border: solid #222224 .2em;;
+   border-radius: .4em;
+   text-align: center;
+   /* font-size: 1em; */
+ }
+
+ label {
+   font-weight: bold;
+ }
+
+.pokemon-label {
+ margin-left: .7em;
+}
+
+.name-label {
+ margin-left: 1.5em;
+}
+
+.pokemon-div {
+  margin: 1em 0 0 3.2em;
+  /* text-align: center; */
+}
+
+.name-div {
+  margin: .8em 0 0 3.2em;
 }
 
 .poke-form-fieldset > * {
-  margin: .2em 0;
+  /* margin: .2em 0; */
 }
 
 .poke-form-fieldset > div {
@@ -21,10 +60,11 @@
 }
 
 .poke-form-fieldset > button {
-  margin: .5em 20% 0 15%;
+  border: solid #222224 .6em;
+  border-radius: 50%;
+  margin: 1em 0 0 4.5em;
   font-size: .9em;
-  width: 7.5em;
-}
-
-.poke-form {
+  font-weight: bold;
+  width: 4.5em;
+  height: 4.5em;
 }
