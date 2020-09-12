@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {uiConfig} from '../App/App'
 import { Link } from 'react-router-dom'
 import './Login.css'
 import { secrets } from '../secrets';
@@ -8,57 +9,39 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 let firebase = require('firebase');
 console.log(secrets);
 
+// firebase.initializeApp(secrets);
 
-firebase.initializeApp(secrets);
-
-const uiConfig = {
-  signInFlow:'popup', 
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.EmailAuthProvider.PROVIDER_ID
-  ], 
-  callbacks: {
-    signInSuccess: () => false
-  }
-}
-
-
+// const uiConfig = {
+//   signInFlow:'popup', 
+//   signInOptions: [
+//     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+//     firebase.auth.EmailAuthProvider.PROVIDER_ID
+//   ], 
+//   callbacks: {
+//     signInSuccess: () => false
+//   }
+// }
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignedIn: false,
+      // isSignedIn: false,
     }
     
   }
   
-  componentDidMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn:!!user })
-      console.log('user', user)
-    })
-  }
+  // componentDidMount = () => {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     this.setState({ isSignedIn:!!user })
+  //     console.log('user', user.displayName)
+  //   })
+  // }
 
   render() {
     return (
        <section>
        <StyledFirebaseAuth uiConfig={ uiConfig } firebaseAuth={firebase.auth()} />
-          <form className='login'>
-            <label htmlFor='username'>
-              username
-            </label>
-            <input type='text' id='username' placeholder='username'>
-            </input>
-            <label htmlFor='password'>
-              password
-            </label>
-            <input type='password' id='password' placeholder='password'>
-            </input>
-            <button onClick={() => console.log('login')}>Login</button>
-            <button onClick={() => console.log('google')}>Login w/ Google</button>
-            <button onClick={() => console.log('facebook')}>Login w/ Facebook</button>
-          </form>
         </section>
 
     )
