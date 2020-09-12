@@ -1,21 +1,24 @@
 A {text-decoration: none}
 
 .header{
-  background-color: #E19720;
+  background-color: #3c5aa6;
   min-height: 7em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-bottom: double 1em #E19720;
+
+  /* border-top: solid .8em #E19720 */
 }
 
 .header-div {
   display: flex;
-  margin: 1em;
+  margin: 1em 2em;
 }
 
 .header-icon{
-  width: 6em;
-  height: 6em;
+  width: 7em;
+  height: 7em;
 }
 
 .header-icon:hover {
@@ -23,11 +26,11 @@ A {text-decoration: none}
 }
 
 .page-name {
-  font-size: 4em;
+  font-size: 4.5em;
   font-weight: bold;
   color: #FAD61D;
   text-decoration: none;
-  margin: .3em
+  margin:  .3em 0 0 .4em
 }
 
 .page-name:hover {
@@ -36,17 +39,17 @@ A {text-decoration: none}
 }
 
 .header-button {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   max-height: 1.9em;
   width: 5em;
   align-self: flex-end;
   /* margin-bottom: 1em; */
-  margin: 2em 1em 0 0;
+  margin: 1.5em 2em 0 0;
   background-color: #FAD61D;
-  color: white;
-  border: solid .1em;
-  border-radius: .1em .5em;
+  color: #E19720;
+  border: solid .15em;
+  border-radius: .2em .5em;
 }
 
 .header-button:hover {
