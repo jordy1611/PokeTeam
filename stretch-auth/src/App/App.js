@@ -5,68 +5,40 @@ import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
 import FormContainer from '../FormContainer/FormContainer'
 import './App.css';
+import { secrets } from '../secrets';
 
 const firebase = require('firebase');
 const firebaseui = require('firebaseui');
 
-// var firebaseConfig = {
-//   apiKey: "AIzaSyAgXadHK5sriJvfnzUufzuwyhXBEPExLAg",
-//   authDomain: "turing-stretch-auth.firebaseapp.com",
-//   databaseURL: "https://turing-stretch-auth.firebaseio.com",
-//   projectId: "turing-stretch-auth",
-//   storageBucket: "turing-stretch-auth.appspot.com",
-//   messagingSenderId: "515130942385",
-//   appId: "1:515130942385:web:082ea0c7e8c0371b985390",
-//   measurementId: "G-4WMS8BCDBQ"
-// }
-// firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
-// const ui = new firebaseui.auth.AuthUI(firebase.auth());
-// var uiConfig = {
-//   callbacks: {
-//     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-//       // User successfully signed in.
-//       // Return type determines whether we continue the redirect automatically
-//       // or whether we leave that to developer to handle.
-//       return true;
-//     },
-// //     uiShown: function() {
-// //       // The widget is rendered.
-// //       // Hide the loader.
-// //       document.getElementById('loader').style.display = 'none';
-// //     }
-// //   },
-// //   signInFlow: 'popup',
-// //   signInSuccessUrl: '<url-to-redirect-to-on-success>',
-// //   signInOptions: [
-// //     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-// //     firebase.auth.EmailAuthProvider.PROVIDER_ID
-// //   ]
-// // }
-// //
-// // ui.start('#firebaseui-auth-container', uiConfig)
-// ui.start('#firebaseui-auth-container', {
-//   signInOptions: [
-//     // List of OAuth providers supported.
-//     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-//     firebase.auth.EmailAuthProvider.PROVIDER_ID
-//
-//   ]
-// });
-// // home route should be form-team
+firebase.initializeApp(secrets);
+
+export const uiConfig = {
+  signInFlow:'popup', 
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ], 
+  callbacks: {
+    signInSuccess: () => false
+  }
+}
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       currentUser: 'n user',
-      pokemon: []
+      pokemon: [],
+      isSignedIn: false,
     }
   }
 
   componentDidMount() {
     this.getAllPokemon();
-
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn:!!user })
+      console.log('user', user)
+    })
   }
 
   async getAllPokemon() {
@@ -104,16 +76,6 @@ class App extends Component {
       .then(response => response.json())
       .catch(error => console.log(error));
   }
-  //  async getSinglePokemonData(id) {
-  //   try {
-  //     const newPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-  //     const pokemon = await newPokemon.json();
-  //     return pokemon;
-  //   }
-  //   catch(error) {
-  //     console.log(error);
-  //   }
-  // }
 
   render() {
     return (
@@ -136,7 +98,10 @@ class App extends Component {
           exact path ='/login'
           render={() => {
             return (
-              <Login />
+              <Login 
+                uiConfig={ uiConfig }
+                firebaseAuth={firebase.auth()}
+              />
             )
           }}
          />

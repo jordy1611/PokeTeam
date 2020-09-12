@@ -6,6 +6,7 @@ const Header = () => {
   return (
     <section className='header'>
       <Link to='/'><h1 className='page-name'>Pokemon Streeetch</h1></Link>
+      {}
       <Link to='/login'><button className='header-button'>Login</button></Link>
     </section>
   )
