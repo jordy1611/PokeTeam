@@ -6,9 +6,21 @@ class PokeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemon: '',
-      pokemonName: '',
+      pokemon: "",
+      pokeName: ""
     }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+    this.props.showPokemon(this.state.pokemon, this.state.pokeName, this.props.slot)
   }
 
   render() {
@@ -19,15 +31,15 @@ class PokeForm extends Component {
               <label className='pokemon-label' htmlFor='pokemon'>
                 Pokemon
               </label>
-              <input type='text' id='pokemon' placeholder='Choose A Pokemon'>
+              <input type='text' id='pokemon' name="pokemon" placeholder='Choose A Pokemon' onChange={this.handleChange}>
               </input>
             </div>
-            <button onClick={() => console.log('find poke')}>Catch</button>
+            <button onClick={this.submitForm}>Catch</button>
             <div className='name-div'>
               <label className='name-label' htmlFor='poke-name'>
                 Name
               </label>
-              <input type='text' id='poke-name' placeholder='Name Your Pokemon'>
+              <input type='text' id='poke-name' name="pokeName" placeholder='Name Your Pokemon' onChange={this.handleChange}>
               </input>
             </div>
         </fieldset>
