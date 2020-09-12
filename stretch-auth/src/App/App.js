@@ -83,6 +83,7 @@ class App extends Component {
   }
 
   logOutUser = () => {
+    firebase.auth().signOut()
     this.setState({user:{}})
   }
 
