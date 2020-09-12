@@ -31,36 +31,42 @@ class FormContainer extends Component {
     }
   }
 
+  showPokeSprite(selectedPokemon, pokeName, slot) {
+    const foundPokemon = this.props.allPokemon.find(pokemon => {
+      return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
+    })
+  }
+
   render() {
     return (
       <section className='form-container'>
         {(this.state.slot1.pokemon &&
-          <PokeCard bulbasaur={this.state.slot1}/>
+          <img className='poke-sprite' src={this.state.slot1.sprite} alt={`${this.state.slot1.pokemon} sprite`}/>
         ) ||
           <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot1"}/>
         }
         {(this.state.slot2.pokemon &&
-          <PokeCard bulbasaur={this.state.slot2}/>
+          <img className='poke-sprite' src={this.state.slot2.sprite} alt={`${this.state.slot2.pokemon} sprite`}/>
         ) ||
           <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot2"}/>
         }
         {(this.state.slot3.pokemon &&
-          <PokeCard bulbasaur={this.state.slot3}/>
+          <img className='poke-sprite' src={this.state.slot3.sprite} alt={`${this.state.slot3.pokemon} sprite`}/>
         ) ||
           <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot3"}/>
         }
         {(this.state.slot4.pokemon &&
-          <PokeCard bulbasaur={this.state.slot4}/>
+          <img className='poke-sprite' src={this.state.slot4.sprite} alt={`${this.state.slot4.pokemon} sprite`}/>
         ) ||
           <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot4"}/>
         }
         {(this.state.slot5.pokemon &&
-          <PokeCard bulbasaur={this.state.slot5}/>
+          <img className='poke-sprite' src={this.state.slot5.sprite} alt={`${this.state.slot5.pokemon} sprite`}/>
         ) ||
           <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot5"}/>
         }
         {(this.state.slot6.pokemon &&
-          <PokeCard bulbasaur={this.state.slot6}/>
+          <img className='poke-sprite' src={this.state.slot6.sprite} alt={`${this.state.slot6.pokemon} sprite`}/>
         ) ||
           <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot6"}/>
         }
