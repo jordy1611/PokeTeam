@@ -1,28 +1,54 @@
 A {text-decoration: none}
 
 .header{
-  background-color: grey;
+  background-color: #E19720;
   min-height: 7em;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.header-div {
+  display: flex;
+  margin: 1em;
+}
+
+.header-icon{
+  width: 6em;
+  height: 6em;
+}
+
+.header-icon:hover {
+  transform: scale(1.2) rotate(20deg)
 }
 
 .page-name {
-  font-size: 2.5em;
-  color: black;
+  font-size: 4em;
+  font-weight: bold;
+  color: #FAD61D;
   text-decoration: none;
+  margin: .3em
 }
 
 .page-name:hover {
-  color: green;
+  font-weight: bolder;
+  transform: scale(1.1) rotate(5deg);
 }
 
 .header-button {
   font-size: 2em;
+  font-weight: bold;
   max-height: 1.9em;
   width: 5em;
   align-self: flex-end;
   /* margin-bottom: 1em; */
-  margin-top: 1em;
+  margin: 2em 1em 0 0;
+  background-color: #FAD61D;
+  color: white;
+  border: solid .1em;
+  border-radius: .1em .5em;
+}
+
+.header-button:hover {
+  transform: scale(1.1)
 }
