@@ -24,9 +24,10 @@ class FormContainer extends Component {
     const foundPokemon = this.props.allPokemon.find(pokemon => {
       return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
     })
-    console.log(foundPokemon)
     if (foundPokemon) {
-      this.setState({[slot]: {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: pokeName}})
+      const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: pokeName};
+      this.props.savePokemonToUser(caughtPokemon, slot);
+      this.setState({[slot]: caughtPokemon});
     }
   }
 

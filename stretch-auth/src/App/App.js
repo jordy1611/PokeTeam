@@ -31,6 +31,8 @@ class App extends Component {
       pokemon: [],
       isSignedIn: false,
     }
+
+    this.savePokemonToUser = this.savePokemonToUser.bind(this);
   }
 
   componentDidMount() {
@@ -77,6 +79,10 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
+  savePokemonToUser(pokemon, slot) {
+    localStorage.setItem(`${this.state.currentUser.displayName} ${slot}`, JSON.stringify(pokemon))
+  }
+
   render() {
     return (
       <Router>
@@ -109,7 +115,7 @@ class App extends Component {
         exact path='/poke-forms'
         render={() => {
           return (
-            <FormContainer allPokemon={this.state.pokemon}/>
+            <FormContainer allPokemon={this.state.pokemon} savePokemonToUser={this.savePokemonToUser}/>
           )
         }}
         />
