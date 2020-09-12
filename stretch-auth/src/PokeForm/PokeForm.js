@@ -11,6 +11,7 @@ class PokeForm extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   handleChange(event) {
@@ -41,7 +42,7 @@ class PokeForm extends Component {
               <input type='text' id='poke-name' name="pokeName" placeholder='Name Your Pokemon' onChange={this.handleChange}>
               </input>
             </div>
-            <button onClick={() => this.props.showPokemon(this.state.pokemon, this.state.pokeName, this.props.slot)}>Find Pokemon</button>
+            <button onClick={this.submitForm}>Find Pokemon</button>
         </fieldset>
       </form>
     )
