@@ -7,7 +7,7 @@ const Header = (props) => {
   return (
     <section className='header'>
       <Link to='/'><h1 className='page-name'>Pokemon Streeetch</h1></Link>
-     {props.userName ? <Link to='/'><button onClick={props.logOutUser} className='header-button'>Log Out</button></Link> : <Link to='/login'><button className='header-button'>Login</button></Link>}
+     {props.currentUserName ? <Link to='/'><button onClick={props.logOutCurrentUser} className='header-button'>Log Out</button></Link> : <Link to='/login'><button className='header-button'>Login</button></Link>}
     </section>
   )
 }

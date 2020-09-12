@@ -27,7 +27,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: {},
+      currentUser: {},
       pokemon: [],
       isSignedIn: false,
     };
@@ -35,13 +35,13 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllPokemon();
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((currentUser) => {
       this.setState({
-        isSignedIn: !!user,
-        user: { name: user.displayName, img: user.photoURL },
+        isSignedIn: !!currentUser,
+        currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
       });
-      console.log("user", user);
-      console.log("this.state.user", this.state.user);
+      console.log("currentUser", currentUser);
+      console.log("this.state.currentUser", this.state.currentUser);
     });
   }
 
@@ -79,16 +79,16 @@ class App extends Component {
       .catch((error) => console.log(error));
   }
 
-  logOutUser = () => {
+  logOutCurrentUser = () => {
     firebase.auth().signOut()
-    this.setState({user:{}})
+    this.setState({currentUser:{}})
   }
 
   render() {
     return (
       <Router>
         <main className="App">
-          <Header userName={this.state.user.name} logOutUser={this.logOutUser}/>
+          <Header currentUserName={this.state.currentUser.name} logOutCurrentUser={this.logOutCurrentUser}/>
           <Route
             exact
             path="/"
@@ -106,7 +106,7 @@ class App extends Component {
             path="/login"
             render={() => {
               return (
-                <Login uiConfig={uiConfig} firebaseAuth={firebase.auth()} userName={this.state.user.name} />
+                <Login uiConfig={uiConfig} firebaseAuth={firebase.auth()} userName={this.state.currentUser.name} />
               );
             }}
           />
