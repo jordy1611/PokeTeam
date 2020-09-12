@@ -7,22 +7,17 @@ import { firebaseui } from '../App/App';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 let firebase = require('firebase');
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-    
+function Login(props) {
+  return (
+     <section>
+       {props.userName ? null : <StyledFirebaseAuth uiConfig={ uiConfig } firebaseAuth={firebase.auth()} />}
+      </section>
+
+  ) 
   }
   
-  render() {
-    return (
-       <section>
-       <StyledFirebaseAuth uiConfig={ uiConfig } firebaseAuth={firebase.auth()} />
-        </section>
+  
+  
 
-    )
-  }
-}
 
 export default Login
