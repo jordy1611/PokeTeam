@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.css'
-let firebase = require('firebase');
+// let firebase = require('firebase');
 
 const Header = (props) => {
   return (

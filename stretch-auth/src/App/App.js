@@ -8,7 +8,7 @@ import "./App.css";
 import { secrets } from "../secrets";
 
 const firebase = require("firebase");
-const firebaseui = require("firebaseui");
+// const firebaseui = require("firebaseui");
 
 firebase.initializeApp(secrets);
 
@@ -19,7 +19,7 @@ export const uiConfig = {
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
   callbacks: {
-    signInSuccess: () => false,
+    signInSuccessWithAuthResult: () => false,
   },
 };
 
@@ -71,9 +71,6 @@ class App extends Component {
     } else {
       this.setState({ pokemon: pokemon });
     }
-
-    // let firebase = require('firebase');
-    // const firebaseui = require('firebaseui');
   }
 
   getSinglePokemonData(id) {
