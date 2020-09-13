@@ -16,10 +16,11 @@ A {text-decoration: none}
   border-radius: 50%;
   /* background-color: white; */
   margin-top: 1em;
+  margin-bottom: .3em;
 }
 
 .poke-sprite:hover {
-animation: rotation .5s infinite linear;
+  animation: rotation .5s infinite linear;
 }
 
 .poke-sprite-div {
@@ -31,6 +32,7 @@ animation: rotation .5s infinite linear;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: -2em;
+
 }
 
 .release-sprite-text {
@@ -40,9 +42,13 @@ animation: rotation .5s infinite linear;
   margin-top: -2em;
 }
 
+/* .release-sprite-text > .poke-sprite:hover  {
+  opacity: 1;
+} */
+
 @keyframes rotation {
   50% {
-    transform: rotate(12deg);
+    transform: rotate(7deg);
   }
   100% {
     transform: rotate(0deg);
