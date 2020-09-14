@@ -17,12 +17,12 @@ const CardContainer = (props) => {
         </div>
       }
       <section className='poke-cards'>
-        <PokeCard bulbasaur={props.bulbasaur}/>
-        <PokeCard bulbasaur={props.bulbasaur}/>
-        <PokeCard bulbasaur={props.bulbasaur}/>
-        <PokeCard bulbasaur={props.bulbasaur}/>
-        <PokeCard bulbasaur={props.bulbasaur}/>
-        <PokeCard bulbasaur={props.bulbasaur}/>
+        <PokeCard pokemon={props.pokemon}/>
+        <PokeCard pokemon={props.pokemon}/>
+        <PokeCard pokemon={props.pokemon}/>
+        <PokeCard pokemon={props.pokemon}/>
+        <PokeCard pokemon={props.pokemon}/>
+        <PokeCard pokemon={props.pokemon}/>
       </section>
     </section>
   )
