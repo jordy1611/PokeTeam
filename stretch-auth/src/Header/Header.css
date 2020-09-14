@@ -7,7 +7,7 @@ A {text-decoration: none}
   flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: double 1em #E19720;
-
+  align-items: center;
   /* border-top: solid .8em #E19720 */
 }
 
@@ -54,4 +54,8 @@ A {text-decoration: none}
 
 .header-button:hover {
   transform: scale(1.1)
+}
+
+.user-message {
+  color: #FAD61D;
 }
