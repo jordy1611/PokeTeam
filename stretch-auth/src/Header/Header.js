@@ -4,9 +4,10 @@ import './Header.css'
 import pikaIcon from '../assets/pikaIcon.png'
 
 const Header = (props) => {
+  console.log('props.currentUserPhotoUrl', props.currentUserImg)
   return (
     <section className='header'>
-      {props.currentUserName ? <h2 className="user-message" >Welcome {props.currentUserName}</h2> : <Redirect to='/' />}
+      {props.currentUserImg ? <img className="user-image"  src={props.currentUserImg}/> : <Redirect to='/' />}
       {props.currentUserName ? <h2 className="user-message" >Welcome {props.currentUserName}</h2> : <Redirect to='/' />}
       <Link to='/'><h1 className='page-name'>Pokemon Streeetch</h1></Link>
       <Link to='/'><div className='header-div'><img className='header-icon' src={pikaIcon} alt='pikachu icon'/><h1 className='page-name'>PokeTeam</h1></div></Link>

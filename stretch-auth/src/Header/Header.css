@@ -4,11 +4,10 @@ A {text-decoration: none}
   background-color: #3c5aa6;
   min-height: 7em;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: double 1em #E19720;
   align-items: center;
-  /* border-top: solid .8em #E19720 */
+
 }
 
 .header-div {
@@ -58,4 +57,9 @@ A {text-decoration: none}
 
 .user-message {
   color: #FAD61D;
+}
+
+.user-image {
+  width: 100px;
+  border-radius: 50%;
 }
