@@ -38,8 +38,20 @@ class FormContainer extends Component {
     })
   }
 
-  removePokemon() {
-    // set state on that slot I hope
+  removePokemon(slot) {
+    this.setState({ [slot] : {}})
+  }
+
+  updateUserTeam() {
+    const userPokemon = {
+      1: this.state.slot1,
+      2: this.state.slot2,
+      3: this.state.slot3,
+      4: this.state.slot4,
+      5: this.state.slot5,
+      6: this.state.slot6,
+     }
+     
   }
 
   render() {
@@ -48,7 +60,7 @@ class FormContainer extends Component {
         {(this.state.slot1.pokemon &&
           <div className='poke-sprite-div'>
           <p className='poke-sprite-name'>{this.state.slot1.name}</p>
-          <img className='poke-sprite' src={this.state.slot1.sprite} alt={`${this.state.slot1.pokemon} sprite`} onClick={() => this.setState({ slot1 : {}})}/>
+          <img className='poke-sprite' src={this.state.slot1.sprite} alt={`${this.state.slot1.pokemon} sprite`} onClick={() => this.removePokemon('slot1')}/>
           <p className='release-sprite-text'>Click To Release</p>
           </div>
         ) ||
