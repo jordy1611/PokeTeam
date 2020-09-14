@@ -36,17 +36,17 @@ class App extends Component {
       userPokeTeam: {},
     };
     this.savePokemonToUser = this.savePokemonToUser.bind(this);
+    this.updateUserPokeTeam = this.updateUserPokeTeam.bind(this);
   }
 
   componentDidMount() {
     this.getAllPokemon();
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(user)
       this.setState({
         isSignedIn: !!user,
-        currentUser: user ? { name: user.displayName, img: user.photoURL } : {},
+        currentUser: user ? { name: user.displayName, img: user.photoURL } : {}
       });
-
+      this.pullUserTeam();
     });
   }
 
@@ -78,6 +78,20 @@ class App extends Component {
     }
   }
 
+  pullUserTeam() {
+    let teamArray = [];
+    for (let i = 1; i <= 6; i++) {
+      const pokemon = JSON.parse(localStorage.getItem(`${this.state.currentUser.name} slot${i}`))
+      const pokeSlot = pokemon ? pokemon : {};
+      teamArray.push(pokeSlot);
+    }
+    const teamObject = teamArray.reduce((team, member, index) => {
+      team[`slot${index + 1}`] = member;
+      return team;
+    }, {})
+    this.setState({userPokeTeam: teamObject});
+  }
+
   getSinglePokemonData(id) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then((response) => response.json())
@@ -90,7 +104,7 @@ class App extends Component {
   }
 
   savePokemonToUser(pokemon, slot) {
-    localStorage.setItem(`${this.state.currentUser.displayName} ${slot}`, JSON.stringify(pokemon))
+    localStorage.setItem(`${this.state.currentUser.name} ${slot}`, JSON.stringify(pokemon))
   }
 
   updateUserPokeTeam = (userTeam) => {
