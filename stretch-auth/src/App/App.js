@@ -41,8 +41,7 @@ class App extends Component {
         isSignedIn: !!currentUser,
         currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
       });
-      console.log("currentUser", currentUser);
-      console.log("this.state.currentUser", this.state.currentUser);
+  
     });
   }
 
@@ -93,7 +92,11 @@ class App extends Component {
     return (
       <Router>
         <main className="App">
-          <Header currentUserName={this.state.currentUser.name} logOutCurrentUser={this.logOutCurrentUser}/>
+          <Header 
+            currentUserName={this.state.currentUser.name} 
+            currentUserImg={this.state.currentUser.img}
+            logOutCurrentUser={this.logOutCurrentUser}
+          />
           <Route
             exact
             path="/"
