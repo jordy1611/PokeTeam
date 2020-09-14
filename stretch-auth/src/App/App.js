@@ -121,7 +121,7 @@ class App extends Component {
                   </div>
               }
                 <CardContainer
-                  isCurrentUser={this.state.currentUser === {}}
+                  currentUser={this.state.currentUser}
                   pokemon={this.state.pokemon[0]}
                 />
                 </div>
