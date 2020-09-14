@@ -92,7 +92,7 @@ class App extends Component {
     localStorage.setItem(`${this.state.currentUser.displayName} ${slot}`, JSON.stringify(pokemon))
   }
 
-  updateUserPokeTeam(userTeam) {
+  updateUserPokeTeam = (userTeam) => {
     this.setState({ userPokeTeam: userTeam })
   }
 

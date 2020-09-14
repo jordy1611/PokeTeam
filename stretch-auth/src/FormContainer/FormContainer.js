@@ -24,12 +24,12 @@ class FormContainer extends Component {
     const foundPokemon = this.props.allPokemon.find(pokemon => {
       return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
     })
-    console.log(foundPokemon)
     if (foundPokemon) {
       const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: (pokeName !== '') ? pokeName : foundPokemon.name.toUpperCase()};
       this.props.savePokemonToUser(caughtPokemon, slot);
-      this.setState({[slot]: caughtPokemon});
+      this.setState({[slot]: caughtPokemon}, () => this.updateUserPokeTeam());
     }
+
   }
 
   showPokeSprite(selectedPokemon, pokeName, slot) {
@@ -39,10 +39,10 @@ class FormContainer extends Component {
   }
 
   removePokemon(slot) {
-    this.setState({ [slot] : {}})
+    this.setState({ [slot] : {}}, () => {this.updateUserPokeTeam()})
   }
 
-  updateUserTeam() {
+  updateUserPokeTeam() {
     const userPokemon = {
       1: this.state.slot1,
       2: this.state.slot2,
@@ -51,7 +51,7 @@ class FormContainer extends Component {
       5: this.state.slot5,
       6: this.state.slot6,
      }
-     
+    this.props.updateUserPokeTeam(userPokemon)
   }
 
   render() {
@@ -69,7 +69,7 @@ class FormContainer extends Component {
         {(this.state.slot2.pokemon &&
           <div className='poke-sprite-div'>
           <p className='poke-sprite-name'>{this.state.slot2.name}</p>
-          <img className='poke-sprite' src={this.state.slot2.sprite} alt={`${this.state.slot2.pokemon} sprite`} onClick={() => this.setState({ slot2 : {}})}/>
+          <img className='poke-sprite' src={this.state.slot2.sprite} alt={`${this.state.slot2.pokemon} sprite`} onClick={() => this.removePokemon('slot2')}/>
           <p className='release-sprite-text'>Click To Release</p>
           </div>
         ) ||
@@ -78,7 +78,7 @@ class FormContainer extends Component {
         {(this.state.slot3.pokemon &&
           <div className='poke-sprite-div'>
           <p className='poke-sprite-name'>{this.state.slot3.name}</p>
-          <img className='poke-sprite' src={this.state.slot3.sprite} alt={`${this.state.slot3.pokemon} sprite`} onClick={() => this.setState({ slot3 : {}})}/>
+          <img className='poke-sprite' src={this.state.slot3.sprite} alt={`${this.state.slot3.pokemon} sprite`} onClick={() => this.removePokemon('slot3')}/>
           <p className='release-sprite-text'>Click To Release</p>
           </div>
         ) ||
@@ -87,7 +87,7 @@ class FormContainer extends Component {
         {(this.state.slot4.pokemon &&
           <div className='poke-sprite-div'>
           <p className='poke-sprite-name'>{this.state.slot4.name}</p>
-          <img className='poke-sprite' src={this.state.slot4.sprite} alt={`${this.state.slot4.pokemon} sprite`} onClick={() => this.setState({ slot4 : {}})}/>
+          <img className='poke-sprite' src={this.state.slot4.sprite} alt={`${this.state.slot4.pokemon} sprite`} onClick={() => this.removePokemon('slot4')}/>
           <p className='release-sprite-text'>Click To Release</p>
           </div>
         ) ||
@@ -96,7 +96,7 @@ class FormContainer extends Component {
         {(this.state.slot5.pokemon &&
           <div className='poke-sprite-div'>
           <p className='poke-sprite-name'>{this.state.slot5.name}</p>
-          <img className='poke-sprite' src={this.state.slot5.sprite} alt={`${this.state.slot5.pokemon} sprite`} onClick={() => this.setState({ slot5 : {}})}/>
+          <img className='poke-sprite' src={this.state.slot5.sprite} alt={`${this.state.slot5.pokemon} sprite`} onClick={() => this.removePokemon('slot5')}/>
           <p className='release-sprite-text'>Click To Release</p>
           </div>
         ) ||
@@ -105,7 +105,7 @@ class FormContainer extends Component {
         {(this.state.slot6.pokemon &&
           <div className='poke-sprite-div'>
           <p className='poke-sprite-name'>{this.state.slot6.name}</p>
-          <img className='poke-sprite' src={this.state.slot6.sprite} alt={`${this.state.slot6.pokemon} sprite`} onClick={() => this.setState({ slot6 : {}})}/>
+          <img className='poke-sprite' src={this.state.slot6.sprite} alt={`${this.state.slot6.pokemon} sprite`} onClick={() => this.removePokemon('slot6')}/>
           <p className='release-sprite-text'>Click To Release</p>
           </div>
         ) ||
