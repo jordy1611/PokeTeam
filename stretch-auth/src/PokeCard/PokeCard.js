@@ -9,7 +9,7 @@ const PokeCard = (props) => {
         <p>PokeName</p>
         <p>PokeType</p>
         <p>PokePic</p>
-        <img src={props.bulbasaur.sprite}/>
+        <img src={props.pokemon.sprite}/>
       </article>
     }
     </section>

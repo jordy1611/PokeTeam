@@ -50,7 +50,7 @@ class App extends Component {
     const pokemon = JSON.parse(localStorage.getItem("allPokemon"));
     if (!pokemon) {
       let pokemonArray = [];
-      for (let i = 0; i < 893; i++) {
+      for (let i = 0; i < 806; i++) {
         const whosThatPokemon = await this.getSinglePokemonData(
           (i + 1).toString()
         );
@@ -101,7 +101,7 @@ class App extends Component {
               return (
                 <CardContainer
                   isCurrentUser={this.state.currentUser !== "no user"}
-                  bulbasaur={this.state.pokemon[0]}
+                  pokemon={this.state.pokemon[0]}
                 />
               );
             }}
