@@ -103,7 +103,7 @@ class App extends Component {
             render={() => {
               return (
                 <div>
-                {this.state.pokemon.length > 0 &&
+                {this.state.pokemon.length === 0 &&
                   <div className="loading-icons">
                     <img className="loading-icon" src={charIcon} alt="Charmander Icon"/>
                     <img className="loading-icon" src={squirtleIcon} alt="Squirtle Icon"/>
