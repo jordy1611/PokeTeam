@@ -6,6 +6,9 @@ import CardContainer from "../CardContainer/CardContainer";
 import FormContainer from "../FormContainer/FormContainer";
 import "./App.css";
 import { secrets } from "../secrets";
+import bulbaIcon from "../assets/bulbaIcon.png"
+import charIcon from "../assets/charIcon.png"
+import squirtleIcon from "../assets/squirtleIcon.png"
 
 const firebase = require("firebase");
 // const firebaseui = require("firebaseui");
@@ -102,10 +105,20 @@ class App extends Component {
             path="/"
             render={() => {
               return (
+                <div>
+                {this.state.pokemon.length === 0 &&
+                  <div className="loading-icons">
+                    <img className="loading-icon" src={charIcon} alt="Charmander Icon"/>
+                    <img className="loading-icon" src={squirtleIcon} alt="Squirtle Icon"/>
+                    <img className="loading-icon" src={bulbaIcon} alt="Bulbasaur Icon"/>
+                    <p className="loading-text">Catching All Pokemon...</p>
+                  </div>
+              }
                 <CardContainer
                   isCurrentUser={this.state.currentUser !== "no user"}
                   pokemon={this.state.pokemon[0]}
                 />
+                </div>
               );
             }}
           />
