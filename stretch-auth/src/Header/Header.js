@@ -4,7 +4,6 @@ import './Header.css'
 import pikaIcon from '../assets/pikaIcon.png'
 
 const Header = (props) => {
-  console.log('props.currentUserPhotoUrl', props.currentUserImg)
   return (
     <section className='header'>
       {props.currentUserImg ? <img className="user-image"  src={props.currentUserImg}/> : <Redirect to='/' />}

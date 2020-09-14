@@ -41,8 +41,7 @@ class App extends Component {
         isSignedIn: !!currentUser,
         currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
       });
-      console.log("currentUser", currentUser);
-      console.log("this.state.currentUser", this.state.currentUser);
+  
     });
   }
 
