@@ -4,7 +4,7 @@ import './PokeCard.css'
 const PokeCard = (props) => {
   return (
     <section>
-    {props.bulbasaur &&
+    {props.pokemon &&
       <article className='poke-card'>
         <p>PokeName</p>
         <p>PokeType</p>

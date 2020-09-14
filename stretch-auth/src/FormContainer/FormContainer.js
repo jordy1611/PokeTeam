@@ -45,12 +45,12 @@ class FormContainer extends Component {
 
   updateUserPokeTeam() {
     const userPokemon = {
-      1: this.state.slot1,
-      2: this.state.slot2,
-      3: this.state.slot3,
-      4: this.state.slot4,
-      5: this.state.slot5,
-      6: this.state.slot6
+      slot1: this.state.slot1,
+      slot2: this.state.slot2,
+      slot3: this.state.slot3,
+      slot4: this.state.slot4,
+      slot5: this.state.slot5,
+      slot6: this.state.slot6
      }
     this.props.updateUserPokeTeam(userPokemon)
   }
