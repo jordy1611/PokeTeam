@@ -33,6 +33,7 @@ class App extends Component {
       currentUser: {},
       pokemon: [],
       isSignedIn: false,
+      userPokeTeam: {},
     };
     this.savePokemonToUser = this.savePokemonToUser.bind(this);
   }
@@ -44,7 +45,7 @@ class App extends Component {
         isSignedIn: !!currentUser,
         currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
       });
-  
+
     });
   }
 
@@ -91,12 +92,16 @@ class App extends Component {
     localStorage.setItem(`${this.state.currentUser.displayName} ${slot}`, JSON.stringify(pokemon))
   }
 
+  updateUserPokeTeam(userTeam) {
+    this.setState({ userPokeTeam: userTeam })
+  }
+
   render() {
     return (
       <Router>
         <main className="App">
-          <Header 
-            currentUserName={this.state.currentUser.name} 
+          <Header
+            currentUserName={this.state.currentUser.name}
             currentUserImg={this.state.currentUser.img}
             logOutCurrentUser={this.logOutCurrentUser}
           />
@@ -135,7 +140,7 @@ class App extends Component {
             exact
             path="/poke-forms"
             render={() => {
-              return <FormContainer allPokemon={this.state.pokemon} savePokemonToUser={this.savePokemonToUser}/>;
+              return <FormContainer allPokemon={this.state.pokemon} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
             }}
           />
         </main>
