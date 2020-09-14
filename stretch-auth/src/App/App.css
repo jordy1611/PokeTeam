@@ -1,3 +1,34 @@
 .App {
   background-color: #2a75bb
 }
+.loading-icons {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 3em 6em;
+
+}
+
+.loading-icon {
+  width: 10em;
+  height: 10em;
+  animation: rotation 1.5s infinite linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-25deg)
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+
+.loading-text {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 1.2em 0 0 .6em;
+  color: white;
+}
