@@ -40,10 +40,11 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllPokemon();
-    firebase.auth().onAuthStateChanged((currentUser) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user)
       this.setState({
-        isSignedIn: !!currentUser,
-        currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
+        isSignedIn: !!user,
+        currentUser: user ? { name: user.displayName, img: user.photoURL } : {},
       });
 
     });
@@ -120,7 +121,7 @@ class App extends Component {
                   </div>
               }
                 <CardContainer
-                  isCurrentUser={this.state.currentUser !== "no user"}
+                  isCurrentUser={this.state.currentUser === {}}
                   pokemon={this.state.pokemon[0]}
                 />
                 </div>
