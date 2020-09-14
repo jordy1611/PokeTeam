@@ -36,16 +36,18 @@ class App extends Component {
       userPokeTeam: {},
     };
     this.savePokemonToUser = this.savePokemonToUser.bind(this);
+    this.updateUserPokeTeam = this.updateUserPokeTeam.bind(this);
+    this.pullUserTeam = this.pullUserTeam.bind(this);
   }
 
   componentDidMount() {
     this.getAllPokemon();
-    firebase.auth().onAuthStateChanged((currentUser) => {
+    firebase.auth().onAuthStateChanged((user) => {
       this.setState({
-        isSignedIn: !!currentUser,
-        currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
+        isSignedIn: !!user,
+        currentUser: user ? { name: user.displayName, img: user.photoURL } : {}
       });
-
+      this.pullUserTeam();
     });
   }
 
@@ -77,6 +79,20 @@ class App extends Component {
     }
   }
 
+  pullUserTeam() {
+    let teamArray = [];
+    for (let i = 1; i <= 6; i++) {
+      const pokemon = JSON.parse(localStorage.getItem(`${this.state.currentUser.name} slot${i}`))
+      const pokeSlot = pokemon ? pokemon : {};
+      teamArray.push(pokeSlot);
+    }
+    const teamObject = teamArray.reduce((team, member, index) => {
+      team[`slot${index + 1}`] = member;
+      return team;
+    }, {})
+    this.setState({userPokeTeam: teamObject});
+  }
+
   getSinglePokemonData(id) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then((response) => response.json())
@@ -89,7 +105,7 @@ class App extends Component {
   }
 
   savePokemonToUser(pokemon, slot) {
-    localStorage.setItem(`${this.state.currentUser.displayName} ${slot}`, JSON.stringify(pokemon))
+    localStorage.setItem(`${this.state.currentUser.name} ${slot}`, JSON.stringify(pokemon))
   }
 
   updateUserPokeTeam = (userTeam) => {
@@ -120,7 +136,7 @@ class App extends Component {
                   </div>
               }
                 <CardContainer
-                  isCurrentUser={this.state.currentUser !== "no user"}
+                  currentUser={this.state.currentUser}
                   pokemon={this.state.pokemon[0]}
                 />
                 </div>
@@ -140,7 +156,7 @@ class App extends Component {
             exact
             path="/poke-forms"
             render={() => {
-              return <FormContainer allPokemon={this.state.pokemon} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
+              return <FormContainer currentUser={this.state.currentUser.name} allPokemon={this.state.pokemon} userPokeTeam={this.state.userPokeTeam} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
             }}
           />
         </main>

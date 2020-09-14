@@ -7,10 +7,10 @@ import './CardContainer.css'
 const CardContainer = (props) => {
   return (
     <section className='card-container'>
-      {!props.isCurrentUser &&
+      {!props.currentUser.name &&
         <NavLink to='/login' activeClassName='login-message-link'><p className='no-user-message'>Log In Please!</p></NavLink>
       }
-      {props.isCurrentUser &&
+      {props.currentUser.name &&
         <div className='no-team-display'>
           <p className='no-team-message'>You Don't Have A Poke Team</p>
           <Link to='/poke-forms'><button className='no-team-button'>Make a Poke Team!</button></Link>
