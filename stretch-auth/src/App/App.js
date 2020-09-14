@@ -37,6 +37,7 @@ class App extends Component {
     };
     this.savePokemonToUser = this.savePokemonToUser.bind(this);
     this.updateUserPokeTeam = this.updateUserPokeTeam.bind(this);
+    this.pullUserTeam = this.pullUserTeam.bind(this);
   }
 
   componentDidMount() {
@@ -155,7 +156,7 @@ class App extends Component {
             exact
             path="/poke-forms"
             render={() => {
-              return <FormContainer allPokemon={this.state.pokemon} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
+              return <FormContainer currentUser={this.state.currentUser.name} allPokemon={this.state.pokemon} userPokeTeam={this.state.userPokeTeam} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
             }}
           />
         </main>
