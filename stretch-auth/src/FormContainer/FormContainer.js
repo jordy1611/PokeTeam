@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import PokeForm from '../PokeForm/PokeForm'
-import PokeCard from '../PokeCard/PokeCard'
-import { Link } from 'react-router-dom'
-import './FormContainer.css'
-
+import PokeForm from '../PokeForm/PokeForm';
+import './FormContainer.css';
+import PropTypes from 'prop-types';
 
 class FormContainer extends Component {
   constructor(props) {
@@ -14,7 +12,8 @@ class FormContainer extends Component {
       slot3: this.props.userPokeTeam.slot3 || {},
       slot4: this.props.userPokeTeam.slot4 || {},
       slot5: this.props.userPokeTeam.slot5 || {},
-      slot6: this.props.userPokeTeam.slot6 || {}
+      slot6: this.props.userPokeTeam.slot6 || {},
+      error: ""
     }
 
     this.showPokemon = this.showPokemon.bind(this);
@@ -28,17 +27,13 @@ class FormContainer extends Component {
       const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: (pokeName !== '') ? pokeName : this.capitalize(foundPokemon.name), id: foundPokemon.id};
       this.props.savePokemonToUser(caughtPokemon, slot);
       this.setState({[slot]: caughtPokemon}, () => this.updateUserPokeTeam());
+    } else {
+      this.setState({error: "Invalid name or PokeDex number."})
     }
   }
 
   capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
-  }
-
-  showPokeSprite(selectedPokemon, pokeName, slot) {
-    const foundPokemon = this.props.allPokemon.find(pokemon => {
-      return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
-    })
   }
 
   removePokemon(slot) {
@@ -119,6 +114,15 @@ class FormContainer extends Component {
     )
   }
 }
+
+FormContainer.propTypes = {
+  currentUser: PropTypes.string,
+  allPokemon: PropTypes.array,
+  userPokeTeam: PropTypes.object,
+  savePokemonToUser: PropTypes.func,
+  updateUserPokeTeam: PropTypes.func
+}
+
 export default FormContainer
 
 // {(this.state.slot1.pokemon &&
