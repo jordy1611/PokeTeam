@@ -28,7 +28,7 @@ class FormContainer extends Component {
       this.props.savePokemonToUser(caughtPokemon, slot);
       this.setState({[slot]: caughtPokemon, error: ""}, () => this.updateUserPokeTeam());
     } else {
-      this.setState({error: "Invalid name or PokeDex number."})
+      this.setState({error: "Invalid Pokemon name or PokeDex number."})
     }
   }
 
