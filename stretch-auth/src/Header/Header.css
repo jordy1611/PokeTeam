@@ -12,15 +12,23 @@ A {text-decoration: none}
 
 .header-div {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 1em 2em;
 }
 
 .header-icon{
   width: 7em;
   height: 7em;
+  margin: 0;
 }
 
-.header-icon:hover {
+.home-text {
+  margin: 0 0 0 0;
+  color: #FAD61D;
+}
+
+.header-div:hover {
   transform: scale(1.2) rotate(20deg)
 }
 
