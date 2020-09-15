@@ -9,12 +9,12 @@ class FormContainer extends Component {
   constructor(props) {
     super(props);
     this.state={
-      slot1: {},
-      slot2: {},
-      slot3: {},
-      slot4: {},
-      slot5: {},
-      slot6: {}
+      slot1: this.props.userPokeTeam.slot1 || {},
+      slot2: this.props.userPokeTeam.slot2 || {},
+      slot3: this.props.userPokeTeam.slot3 || {},
+      slot4: this.props.userPokeTeam.slot4 || {},
+      slot5: this.props.userPokeTeam.slot5 || {},
+      slot6: this.props.userPokeTeam.slot6 || {}
     }
 
     this.showPokemon = this.showPokemon.bind(this);
@@ -40,6 +40,7 @@ class FormContainer extends Component {
 
   removePokemon(slot) {
     this.setState({ [slot] : {}}, () => {this.updateUserPokeTeam()})
+    localStorage.removeItem(`${this.props.currentUser} ${slot}`);
   }
 
   updateUserPokeTeam() {
@@ -49,7 +50,7 @@ class FormContainer extends Component {
       3: this.state.slot3,
       4: this.state.slot4,
       5: this.state.slot5,
-      6: this.state.slot6,
+      6: this.state.slot6
      }
     this.props.updateUserPokeTeam(userPokemon)
   }
