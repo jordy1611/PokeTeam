@@ -1,5 +1,9 @@
 A {text-decoration: none}
 
+.error-message {
+  text-align: center
+}
+
 .form-container {
   display: flex;
   flex-direction: row;
