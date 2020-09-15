@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './PokeForm.css'
+import './PokeForm.css';
+import PropTypes from 'prop-types';
 
 
 class PokeForm extends Component {
@@ -49,5 +50,10 @@ class PokeForm extends Component {
   }
 }
 
+PokeForm.propTypes = {
+  slot: PropTypes.string,
+  allPokemon: PropTypes.array,
+  showPokemon: PropTypes.func
+}
 
 export default PokeForm

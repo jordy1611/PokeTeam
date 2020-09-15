@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect, Link, } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Header from "../Header/Header";
 import CardContainer from "../CardContainer/CardContainer";
@@ -42,12 +42,17 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllPokemon();
-    firebase.auth().onAuthStateChanged((user) => {
-      this.setState({
-        isSignedIn: !!user,
-        currentUser: user ? { name: user.displayName, img: user.photoURL } : {}
-      });
-      this.pullUserTeam();
+
+    firebase.auth().onAuthStateChanged((currentUser) => {
+      if(currentUser) {
+        this.setState({
+          isSignedIn: !!currentUser,
+          currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
+        });
+
+      }
+
+
     });
   }
 

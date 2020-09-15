@@ -1,9 +1,8 @@
 import React from 'react';
-import PokeCard from '../PokeCard/PokeCard'
-import { NavLink, Link } from 'react-router-dom'
-import './CardContainer.css'
-
-// needs conditional renders for user & pokemon + user & no pokemon
+import PokeCard from '../PokeCard/PokeCard';
+import { NavLink, Link } from 'react-router-dom';
+import './CardContainer.css';
+import PropTypes from 'prop-types';
 const CardContainer = (props) => {
   const hasTeam = Object.values(props.userPokeTeam).some(poke => !!poke.pokemon)
 
@@ -28,4 +27,10 @@ const CardContainer = (props) => {
     </section>
   )
 }
+
+CardContainer.propTypes = {
+  currentUser: PropTypes.object,
+  userPokeTeam: PropTypes.object
+}
+
 export default CardContainer
