@@ -90,7 +90,6 @@ class App extends Component {
       team[`slot${index + 1}`] = member;
       return team;
     }, {})
-    console.log(teamObject);
     this.setState({userPokeTeam: teamObject});
   }
 
