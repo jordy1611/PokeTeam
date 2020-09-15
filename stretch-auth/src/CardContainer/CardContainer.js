@@ -13,14 +13,9 @@ const CardContainer = (props) => {
         <NavLink to='/login' activeClassName='login-message-link'><p className='no-user-message'>Log In Please!</p></NavLink>
       }
       { props.currentUser.name && !hasTeam &&
-        <div className='no-team-display'>
-          <p className='no-team-message'>You Don't Have A PokeTeam</p>
-          <Link to='/poke-forms'><button className='make-team-button'>Make a PokeTeam!</button></Link>
-        </div>
+          <Link to='/poke-forms'><p className='no-team-message'>You Don't Have A PokeTeam</p></Link>
       }
       { props.currentUser.name && hasTeam &&
-        <div>
-          <Link to='/poke-forms'><button className='edit-team-button'>Edit Your PokeTeam!</button></Link>
           <section className='poke-cards'>
             <PokeCard pokemon={props.userPokeTeam.slot1}/>
             <PokeCard pokemon={props.userPokeTeam.slot2}/>
@@ -29,7 +24,6 @@ const CardContainer = (props) => {
             <PokeCard pokemon={props.userPokeTeam.slot5}/>
             <PokeCard pokemon={props.userPokeTeam.slot6}/>
           </section>
-        </div>
       }
     </section>
   )
