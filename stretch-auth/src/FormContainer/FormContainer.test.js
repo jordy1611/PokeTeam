@@ -65,7 +65,7 @@ describe('FormContainer', () => {
     expect(pokeSprites).toHaveLength(1)
   })
 
-  it('should-do a thing when clicking the catch button' , () => {
+  it('should render a pokemon sprite clicking the catch button' , () => {
     render(
       <FormContainer
       currentUser={sampleUser}
@@ -77,13 +77,19 @@ describe('FormContainer', () => {
     )
 
 
-    const pokeNameInput1 = screen.getByPlaceholderText('Name Pokemon #1')
+    const pokeInput1 = screen.getByPlaceholderText('Choose Pokemon #1')
     const catchButtons = screen.getAllByRole('button')
     const catchButton1 = catchButtons[0]
 
-    expect(pokeInputs).toHaveLength(6)
-    expect(pokeNameInputs).toHaveLength(6)
-    expect(catchButtons).toHaveLength(6)
+    expect(pokeInput1).toBeInTheDocument()
+    expect(catchButton1).toBeInTheDocument()
+
+    fireEvent.change(pokeInput1, {target: { value: '1'}})
+    fireEvent.click(catchButton1)
+
+    const pokeSprite = screen.getByAltText('bulbasaur sprite')
+
+    expect(pokeSprite).toBeInTheDocument()
   })
 
 })
