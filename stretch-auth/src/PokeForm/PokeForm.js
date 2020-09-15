@@ -40,7 +40,7 @@ class PokeForm extends Component {
               <label className='name-label' htmlFor='poke-name'>
                 Name
               </label>
-              <input type='text' id='poke-name' name="pokeName" placeholder='Name Your Pokemon' maxlength='11' onChange={this.handleChange}>
+              <input type='text' id='poke-name' name="pokeName" placeholder='Name Your Pokemon' maxLength='11' onChange={this.handleChange}>
               </input>
             </div>
         </fieldset>

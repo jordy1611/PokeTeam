@@ -20,4 +20,4 @@ Login.propTypes = {
   userName: PropTypes.string
 }
 
-export default Login
+export default Login;
