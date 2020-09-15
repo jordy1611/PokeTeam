@@ -50,7 +50,7 @@ describe('PokeForm', () => {
     expect(pokeNameInput.value).toBe('Patricia')
   })
 
-  it('', () => {
+  it('should have inputs whose values change', () => {
     render (
       <PokeForm
         allPokemon={uncaughtPokemons}
@@ -60,11 +60,34 @@ describe('PokeForm', () => {
     )
 
     const pokeInput = screen.getByPlaceholderText('Choose Pokemon #1')
-    const catchButton = screen.getByRole('button')
     const pokeNameInput = screen.getByPlaceholderText('Name Your Pokemon')
 
+    fireEvent.change(pokeInput, {target: { value: '6'}})
+    fireEvent.change(pokeNameInput, {target: {value: 'Patricia' }})
+
     expect(pokeInput).toBeInTheDocument()
-    expect(catchButton).toBeInTheDocument()
     expect(pokeNameInput).toBeInTheDocument()
+
+    expect(pokeInput.value).toBe('6')
+    expect(pokeNameInput.value).toBe('Patricia')
+  })
+
+  it('should fire a function when the catch button is clicked', () => {
+    const mockShowPokemon = jest.fn()
+    render (
+      <PokeForm
+        allPokemon={uncaughtPokemons}
+        showPokemon={mockShowPokemon}
+        slot={"slot1"}
+      />
+    )
+
+    const pokeInput = screen.getByPlaceholderText('Choose Pokemon #1')
+    const catchButton = screen.getByRole('button')
+
+    fireEvent.change(pokeInput, {target: { value: '6'}})
+    fireEvent.click(catchButton)
+
+    expect(mockShowPokemon).toHaveBeenCalledTimes(1)
   })
 })
