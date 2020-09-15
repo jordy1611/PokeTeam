@@ -6,7 +6,7 @@ import { screen, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 describe('FormContainer', () => {
-  it('should render 6 login forms when a user has no poke team' , () => {
+  it('should render 6 login forms when a user has no poke team', () => {
     render(
       <FormContainer
       currentUser={sampleUser}
@@ -17,16 +17,14 @@ describe('FormContainer', () => {
       />
     )
 
-
     const pokeNameInputs = screen.getAllByPlaceholderText('Name Your Pokemon')
     const catchButtons = screen.getAllByRole('button')
-
 
     expect(pokeNameInputs).toHaveLength(6)
     expect(catchButtons).toHaveLength(6)
   })
 
-  it('should render 6 poke sprites when a user has a full poke team' , () => {
+  it('should render 6 poke sprites when a user has a full poke team', () => {
     render(
       <FormContainer
       currentUser={sampleUser}
@@ -44,7 +42,7 @@ describe('FormContainer', () => {
     expect(pokeSprites).toHaveLength(6)
   })
 
-  it('should render 1 poke sprite & 5 forms when a user has a single pokemon in their poke team' , () => {
+  it('should render 1 poke sprite & 5 forms when a user has a single pokemon in their poke team', () => {
     render(
       <FormContainer
       currentUser={sampleUser}
@@ -62,7 +60,7 @@ describe('FormContainer', () => {
     expect(pokeSprites).toHaveLength(1)
   })
 
-  it('should render a pokemon sprite clicking the catch button' , () => {
+  it('should render a pokemon sprite clicking the catch button', () => {
     render(
       <FormContainer
       currentUser={sampleUser}
@@ -93,7 +91,7 @@ describe('FormContainer', () => {
     expect(pokeName).toBeInTheDocument()
   })
 
-  it('should render a pokemon sprite clicking the catch button' , () => {
+  it('should render a pokemon sprite clicking the catch button', () => {
     render(
       <FormContainer
       currentUser={sampleUser}
