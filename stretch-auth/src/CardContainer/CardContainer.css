@@ -31,8 +31,15 @@ A {text-decoration: none}
 }
 
 .no-team-message {
-  font-size: 2em;
+  font-size: 4em;
   font-weight: bold;
+  color: #FAD61D;
+  text-align: center;
+}
+
+.no-team-message:hover {
+  color: #E19720;
+  transform: scale(1.4)
 }
 
 .make-team-button {
