@@ -32,14 +32,14 @@ export const pokeTeam = [
   }
 ]
 
-export const caughtPokemon = {
+export const indPokeTeam = {
   pokemon: 'bulbasaur',
   sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
   name: 'Toby',
   id: 1
 }
 
-export const uncaughtPokemon = [
+export const uncaughtPokemons = [
   {
     name: "bulbasaur",
     id: 1,
@@ -87,6 +87,13 @@ export const uncaughtPokemon = [
     types: []
   }
 ]
+
+export const uncaughtPokemon = {
+  name: "bulbasaur",
+  id: 1,
+  sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+  types: []
+}
 
 export const sampleUser = {
        name: 'Testy Testerson',
