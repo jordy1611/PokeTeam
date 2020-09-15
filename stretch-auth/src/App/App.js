@@ -42,12 +42,17 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllPokemon();
-    firebase.auth().onAuthStateChanged((user) => {
-      this.setState({
-        isSignedIn: !!user,
-        currentUser: user ? { name: user.displayName, img: user.photoURL } : {}
-      });
-      this.pullUserTeam();
+
+    firebase.auth().onAuthStateChanged((currentUser) => {
+      if(currentUser) {
+        this.setState({
+          isSignedIn: !!currentUser,
+          currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
+        });
+
+      }
+
+
     });
   }
 
