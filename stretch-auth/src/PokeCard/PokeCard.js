@@ -6,13 +6,15 @@ const PokeCard = (props) => {
     <section>
     {(props.pokemon.pokemon &&
       <article className='poke-card'>
-        <p>{props.pokemon.name}</p>
-        <p>{props.pokemon.pokemon}</p>
-        <p>id</p>
-        <img src={props.pokemon.sprite}/>
-        <img src={pokeBallIcon} />
+        <p className="pokecard-name">{props.pokemon.name}</p>
+        <p className="pokecard-pokemon">{props.pokemon.pokemon}</p>
+        <p className="pokecard-id">{props.pokemon.id}</p>
+        <img className="pokecard-sprite" src={props.pokemon.sprite}/>
+        <img className="pokecard-pokeball"src={pokeBallIcon} />
         </article>) ||
-      <article className='poke-card'></article>
+      <article className='poke-card'>
+        <img className="pokecard-pokeball"src={pokeBallIcon} />
+      </article>
     }
     </section>
   )
