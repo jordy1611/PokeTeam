@@ -77,19 +77,25 @@ describe('FormContainer', () => {
     )
 
 
-    const pokeInput1 = screen.getByPlaceholderText('Choose Pokemon #1')
     const catchButtons = screen.getAllByRole('button')
+    const pokeNameInputs = screen.getAllByPlaceholderText('Name Your Pokemon')
+    const pokeInput1 = screen.getByPlaceholderText('Choose Pokemon #1')
     const catchButton1 = catchButtons[0]
+    const pokeNameInput1 = pokeNameInputs[0]
 
     expect(pokeInput1).toBeInTheDocument()
     expect(catchButton1).toBeInTheDocument()
+    expect(pokeNameInput1).toBeInTheDocument()
 
     fireEvent.change(pokeInput1, {target: { value: '1'}})
+    fireEvent.change(pokeNameInput1, {target: { value: 'Big Tuna'}})
     fireEvent.click(catchButton1)
 
     const pokeSprite = screen.getByAltText('bulbasaur sprite')
+    const pokeName = screen.getByText('Big Tuna')
 
     expect(pokeSprite).toBeInTheDocument()
+    expect(pokeName).toBeInTheDocument()
   })
 
 })
