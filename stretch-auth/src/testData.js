@@ -38,10 +38,17 @@ export const pokeTeam = {
 }
 
 export const indPokeTeam = {
-  pokemon: 'bulbasaur',
-  sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-  name: 'Toby',
-  id: 1
+  slot1: {
+    pokemon: 'bulbasaur',
+    sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+    name: 'Toby',
+    id: 1
+    },
+    slot2: {},
+    slot3: {},
+    slot4: {},
+    slot5: {} ,
+    slot6: {}
 }
 
 export const uncaughtPokemons = [
