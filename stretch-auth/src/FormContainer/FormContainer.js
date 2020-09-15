@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PokeForm from '../PokeForm/PokeForm'
-import PokeCard from '../PokeCard/PokeCard'
-import { Link } from 'react-router-dom'
-import './FormContainer.css'
-
+import PokeForm from '../PokeForm/PokeForm';
+import PokeCard from '../PokeCard/PokeCard';
+import { Link } from 'react-router-dom';
+import './FormContainer.css';
+import PropTypes from 'prop-types';
 
 class FormContainer extends Component {
   constructor(props) {
@@ -119,6 +119,15 @@ class FormContainer extends Component {
     )
   }
 }
+
+FormContainer.propTypes = {
+  currentUser: PropTypes.string,
+  allPokemon: PropTypes.array,
+  userPokeTeam: PropTypes.object,
+  savePokemonToUser: PropTypes.func,
+  updateUserPokeTeam: PropTypes.func
+}
+
 export default FormContainer
 
 // {(this.state.slot1.pokemon &&
