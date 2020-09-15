@@ -1,5 +1,4 @@
-// import MutationObserver from '@sheerun/mutationobserver-shim';
-// window.MutationObserver = MutationObserver;
+// error message rendering, on button press just in pokemon field
 import React from 'react';
 import FormContainer from './FormContainer.js'
 import { MemoryRouter } from 'react-router-dom';
@@ -46,6 +45,44 @@ describe('FormContainer', () => {
 
     expect(pokeInputs).toHaveLength(0)
     expect(pokeSprites).toHaveLength(6)
+  })
+
+  it('should render 1 poke sprite & 5 forms when a user has a single pokemon in their poke team' , () => {
+    render(
+      <FormContainer
+      currentUser={sampleUser}
+      allPokemon={uncaughtPokemons}
+      userPokeTeam={indPokeTeam}
+      savePokemonToUser={jest.fn()}
+      updateUserPokeTeam={jest.fn()}
+      />
+    )
+
+    const pokeInputs = screen.queryAllByPlaceholderText('Choose A Pokemon')
+    const pokeSprites = screen.getAllByText('Click To Release')
+
+    expect(pokeInputs).toHaveLength(5)
+    expect(pokeSprites).toHaveLength(1)
+  })
+
+  it('should-do a thing when clicking the catch button' , () => {
+    render(
+      <FormContainer
+      currentUser={sampleUser}
+      allPokemon={uncaughtPokemons}
+      userPokeTeam={{}}
+      savePokemonToUser={jest.fn()}
+      updateUserPokeTeam={jest.fn()}
+      />
+    )
+
+    const pokeInputs = screen.getAllByPlaceholderText('Choose')
+    const pokeNameInputs = screen.getAllByPlaceholderText('Name Your Pokemon')
+    const catchButtons = screen.getAllByRole('button')
+
+    expect(pokeInputs).toHaveLength(6)
+    expect(pokeNameInputs).toHaveLength(6)
+    expect(catchButtons).toHaveLength(6)
   })
 
 })
