@@ -5,25 +5,26 @@ import './CardContainer.css'
 
 // needs conditional renders for user & pokemon + user & no pokemon
 const CardContainer = (props) => {
+  const hasTeam = Object.values(props.userPokeTeam).some(poke => !!poke.pokemon)
+
   return (
     <section className='card-container'>
-      {!props.currentUser.name &&
+      { !props.currentUser.name &&
         <NavLink to='/login' activeClassName='login-message-link'><p className='no-user-message'>Log In Please!</p></NavLink>
       }
-      {props.currentUser.name &&
-        <div className='no-team-display'>
-          <p className='no-team-message'>You Don't Have A Poke Team</p>
-          <Link to='/poke-forms'><button className='no-team-button'>Make a Poke Team!</button></Link>
-        </div>
+      { props.currentUser.name && !hasTeam &&
+          <Link to='/poke-forms'><p className='no-team-message'>You Don't Have A PokeTeam</p></Link>
       }
-      <section className='poke-cards'>
-        <PokeCard pokemon={props.pokemon}/>
-        <PokeCard pokemon={props.pokemon}/>
-        <PokeCard pokemon={props.pokemon}/>
-        <PokeCard pokemon={props.pokemon}/>
-        <PokeCard pokemon={props.pokemon}/>
-        <PokeCard pokemon={props.pokemon}/>
-      </section>
+      { props.currentUser.name && hasTeam &&
+          <section className='poke-cards'>
+            <PokeCard pokemon={props.userPokeTeam.slot1}/>
+            <PokeCard pokemon={props.userPokeTeam.slot2}/>
+            <PokeCard pokemon={props.userPokeTeam.slot3}/>
+            <PokeCard pokemon={props.userPokeTeam.slot4}/>
+            <PokeCard pokemon={props.userPokeTeam.slot5}/>
+            <PokeCard pokemon={props.userPokeTeam.slot6}/>
+          </section>
+      }
     </section>
   )
 }

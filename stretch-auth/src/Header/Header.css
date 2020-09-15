@@ -5,6 +5,7 @@ A {text-decoration: none}
   min-height: 7em;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   border-bottom: double 1em #E19720;
   align-items: center;
 
@@ -12,15 +13,24 @@ A {text-decoration: none}
 
 .header-div {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 1em 2em;
 }
 
 .header-icon{
   width: 7em;
   height: 7em;
+  margin: 0;
+  margin-top: -.5em;
 }
 
-.header-icon:hover {
+.home-text {
+  margin: 0 0 0 0;
+  color: #FAD61D;
+}
+
+.header-div:hover {
   transform: scale(1.2) rotate(20deg)
 }
 
@@ -29,7 +39,7 @@ A {text-decoration: none}
   font-weight: bold;
   color: #FAD61D;
   text-decoration: none;
-  margin:  .3em 0 0 .4em
+  margin:  .3em 0 0 -1.5em;
 }
 
 .page-name:hover {
@@ -44,7 +54,7 @@ A {text-decoration: none}
   width: 5em;
   align-self: flex-end;
   /* margin-bottom: 1em; */
-  margin: 1.5em 2em 0 0;
+  margin: 1em 2em 0 0;
   background-color: #FAD61D;
   color: #E19720;
   border: solid .15em;
@@ -57,9 +67,12 @@ A {text-decoration: none}
 
 .user-message {
   color: #FAD61D;
+  font-size: 1.8em;
+  margin: 1.8em 0 0 -3em;
 }
 
 .user-image {
-  width: 100px;
+  width: 6em;
   border-radius: 50%;
+  margin-top: 1em;
 }

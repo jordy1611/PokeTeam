@@ -10,7 +10,7 @@ A {text-decoration: none}
 
 
 .no-user-message {
-  color: black;
+  color: white;
   width: 100%;
   text-align: center;
   font-size: 4em;
@@ -19,7 +19,8 @@ A {text-decoration: none}
 }
 
 .no-user-message:hover {
-  color: green;
+  color: #FAD61D;
+  transform: scale(1.2) rotate(2deg);
 }
 
 .no-team-display {
@@ -33,7 +34,8 @@ A {text-decoration: none}
   font-size: 2em;
   font-weight: bold;
 }
-.no-team-button {
+
+.make-team-button {
   font-size: 7em;
   font-weight: bolder;
   width: 8em;
@@ -42,6 +44,20 @@ A {text-decoration: none}
   border-radius: 1em;
   margin-bottom: 1em;
 }
+
+.edit-team-button {
+  background: linear-gradient( #dbdbdb 65%, #4d4d4d 30%);
+  border: solid #0a0a0a .1em;;
+  border-radius: 1em;
+  font-size: 7em;
+  font-weight: bolder;
+  width: 8em;
+  height: 2.5em;
+  align-self: center;
+  margin: 0 0 .5em 2.5em;
+}
+
+
 .poke-cards {
   display: flex;
   flex-wrap: wrap;

@@ -25,11 +25,14 @@ class FormContainer extends Component {
       return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
     })
     if (foundPokemon) {
-      const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: (pokeName !== '') ? pokeName : foundPokemon.name.toUpperCase()};
+      const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: (pokeName !== '') ? pokeName : this.capitalize(foundPokemon.name), id: foundPokemon.id};
       this.props.savePokemonToUser(caughtPokemon, slot);
       this.setState({[slot]: caughtPokemon}, () => this.updateUserPokeTeam());
     }
+  }
 
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   showPokeSprite(selectedPokemon, pokeName, slot) {
@@ -45,12 +48,12 @@ class FormContainer extends Component {
 
   updateUserPokeTeam() {
     const userPokemon = {
-      1: this.state.slot1,
-      2: this.state.slot2,
-      3: this.state.slot3,
-      4: this.state.slot4,
-      5: this.state.slot5,
-      6: this.state.slot6
+      slot1: this.state.slot1,
+      slot2: this.state.slot2,
+      slot3: this.state.slot3,
+      slot4: this.state.slot4,
+      slot5: this.state.slot5,
+      slot6: this.state.slot6
      }
     this.props.updateUserPokeTeam(userPokemon)
   }
