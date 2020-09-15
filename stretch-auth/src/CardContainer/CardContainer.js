@@ -30,7 +30,7 @@ const CardContainer = (props) => {
 
 CardContainer.propTypes = {
   currentUser: PropTypes.object,
-  userPokeTeam: PropTypes.array
+  userPokeTeam: PropTypes.object
 }
 
 export default CardContainer
