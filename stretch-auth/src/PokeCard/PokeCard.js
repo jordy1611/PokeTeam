@@ -4,12 +4,14 @@ import './PokeCard.css'
 const PokeCard = (props) => {
   return (
     <section>
-    {true === true &&
+    {(props.pokemon.pokemon &&
       <article className='poke-card'>
-        <p>PokeName</p>
-        <p>PokeType</p>
-        <p>PokePic</p>
-      </article>
+        <p>{props.pokemon.name}</p>
+        <p>{props.pokemon.pokemon}</p>
+        <p>id</p>
+        <img src={props.pokemon.sprite}/>
+      </article>) ||
+      <article className='poke-card'></article>
     }
     </section>
   )
