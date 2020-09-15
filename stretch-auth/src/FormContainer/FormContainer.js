@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PokeForm from '../PokeForm/PokeForm';
-import PokeCard from '../PokeCard/PokeCard';
-import { Link } from 'react-router-dom';
 import './FormContainer.css';
 import PropTypes from 'prop-types';
 
@@ -33,12 +31,6 @@ class FormContainer extends Component {
 
   capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
-  }
-
-  showPokeSprite(selectedPokemon, pokeName, slot) {
-    const foundPokemon = this.props.allPokemon.find(pokemon => {
-      return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
-    })
   }
 
   removePokemon(slot) {

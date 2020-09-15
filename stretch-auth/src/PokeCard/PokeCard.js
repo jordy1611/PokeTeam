@@ -1,6 +1,8 @@
 import React from 'react';
-import './PokeCard.css'
-import pokeBallIcon from '../assets/pokeball.png'
+import './PokeCard.css';
+import pokeBallIcon from '../assets/pokeball.png';
+import PropTypes from 'prop-types';
+
 const PokeCard = (props) => {
   console.log(props.pokemon)
   return (
@@ -22,6 +24,9 @@ const PokeCard = (props) => {
   )
 }
 
+PokeCard.propTypes = {
+  pokemon: PropTypes.object
+}
 
 
 
