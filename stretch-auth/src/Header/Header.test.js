@@ -85,14 +85,4 @@ describe('Header', () => {
     expect(mockLogOutUser).toHaveBeenCalledTimes(1)
   })
 
-
-
-
-
-
-
-
-
-
-
 })
