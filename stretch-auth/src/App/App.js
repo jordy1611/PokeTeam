@@ -6,6 +6,7 @@ import CardContainer from "../CardContainer/CardContainer";
 import FormContainer from "../FormContainer/FormContainer";
 import "./App.css";
 import { secrets } from "../secrets";
+import {getSinglePokemonData} from '../apiCalls'
 import bulbaIcon from "../assets/bulbaIcon.png"
 import charIcon from "../assets/charIcon.png"
 import squirtleIcon from "../assets/squirtleIcon.png"
@@ -37,6 +38,7 @@ class App extends Component {
     this.savePokemonToUser = this.savePokemonToUser.bind(this);
     this.updateUserPokeTeam = this.updateUserPokeTeam.bind(this);
     this.pullUserTeam = this.pullUserTeam.bind(this);
+    this.getSinglePokemonData = getSinglePokemonData.bind(this)
   }
 
   componentDidMount() {
@@ -57,7 +59,7 @@ class App extends Component {
     if (!pokemon) {
       let pokemonArray = [];
       for (let i = 0; i < 806; i++) {
-        const whosThatPokemon = await this.getSinglePokemonData(
+        const whosThatPokemon = await getSinglePokemonData(
           (i + 1).toString()
         );
         pokemonArray.push(whosThatPokemon);
@@ -91,12 +93,6 @@ class App extends Component {
       return team;
     }, {})
     this.setState({userPokeTeam: teamObject});
-  }
-
-  getSinglePokemonData(id) {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-      .then((response) => response.json())
-      .catch((error) => console.log(error));
   }
 
   logOutCurrentUser = () => {
