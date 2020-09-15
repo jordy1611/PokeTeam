@@ -44,7 +44,8 @@ describe('FormContainer', () => {
     const pokeInputs = screen.queryAllByPlaceholderText('Choose A Pokemon')
     const pokeSprites = screen.getAllByText('Click To Release')
 
-    expect(pokeInputs).toHaveLength(6)
+    expect(pokeInputs).toHaveLength(0)
+    expect(pokeSprites).toHaveLength(6)
   })
 
 })
