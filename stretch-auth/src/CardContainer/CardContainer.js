@@ -15,7 +15,7 @@ const CardContainer = (props) => {
       { props.currentUser.name && !hasTeam &&
         <div className='no-team-display'>
           <p className='no-team-message'>You Don't Have A PokeTeam</p>
-          <Link to='/poke-forms'><button className='edit-team-button'>Make a PokeTeam!</button></Link>
+          <Link to='/poke-forms'><button className='make-team-button'>Make a PokeTeam!</button></Link>
         </div>
       }
       { props.currentUser.name && hasTeam &&
