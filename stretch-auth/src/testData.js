@@ -1,36 +1,41 @@
-export const pokeTeam = [
-  {
+export const pokeTeam = {
+  slot1: {
     pokemon: 'bulbasaur',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
     name: 'Michael',
     id: 1
-  }, {
+    },
+  slot2: {
     pokemon: 'bulbasaur',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
     name: 'Dwight',
     id: 1
-  }, {
+    },
+  slot3: {
     pokemon: 'bulbasaur',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
     name: 'Jim',
     id: 1
-  }, {
+    },
+    slot4: {
     pokemon: 'bulbasaur',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
     name: 'Pam',
     id: 1
-  }, {
+    },
+    slot5: {
     pokemon: 'bulbasaur',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
     name: 'Angela',
     id: 1
-  } , {
+    } ,
+    slot6: {
     pokemon: 'bulbasaur',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
     name: 'Oscar',
     id: 1
-  }
-]
+    }
+}
 
 export const indPokeTeam = {
   pokemon: 'bulbasaur',
