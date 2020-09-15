@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import Login from "../Login/Login";
 import Header from "../Header/Header";
 import CardContainer from "../CardContainer/CardContainer";
@@ -18,7 +18,8 @@ firebase.initializeApp(secrets);
 export const uiConfig = {
   signInFlow: "popup",
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
   callbacks: {
     signInSuccessWithAuthResult: () => false,
@@ -41,17 +42,14 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllPokemon();
-
     firebase.auth().onAuthStateChanged((currentUser) => {
       if(currentUser) {
         this.setState({
           isSignedIn: !!currentUser,
           currentUser: { name: currentUser.displayName, img: currentUser.photoURL },
         });
-
+        this.pullUserTeam();
       }
-
-
     });
   }
 
@@ -64,7 +62,6 @@ class App extends Component {
           (i + 1).toString()
         );
         pokemonArray.push(whosThatPokemon);
-        console.log(i);
       }
       console.log(pokemonArray);
       this.setState({ pokemon: pokemonArray });
@@ -100,7 +97,6 @@ class App extends Component {
   getSinglePokemonData(id) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then((response) => response.json())
-      .then((data) => console.log(data))
       .catch((error) => console.log(error));
   }
 
@@ -161,15 +157,7 @@ class App extends Component {
             exact
             path="/poke-forms"
             render={() => {
-              return (
-                <FormContainer
-                  currentUser={this.state.currentUser.name}
-                  allPokemon={this.state.pokemon}
-                  userPokeTeam={this.state.userPokeTeam}
-                  savePokemonToUser={this.savePokemonToUser}
-                  updateUserPokeTeam={this.updateUserPokeTeam}
-                  />
-                );
+              return <FormContainer currentUser={this.state.currentUser.name} allPokemon={this.state.pokemon} userPokeTeam={this.state.userPokeTeam} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
             }}
           />
         </main>
