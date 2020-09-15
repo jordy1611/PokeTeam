@@ -96,6 +96,7 @@ class App extends Component {
   getSinglePokemonData(id) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then((response) => response.json())
+      .then((data) => console.log(data))
       .catch((error) => console.log(error));
   }
 
@@ -156,7 +157,15 @@ class App extends Component {
             exact
             path="/poke-forms"
             render={() => {
-              return <FormContainer currentUser={this.state.currentUser.name} allPokemon={this.state.pokemon} userPokeTeam={this.state.userPokeTeam} savePokemonToUser={this.savePokemonToUser} updateUserPokeTeam={this.updateUserPokeTeam}/>;
+              return (
+                <FormContainer
+                  currentUser={this.state.currentUser.name}
+                  allPokemon={this.state.pokemon}
+                  userPokeTeam={this.state.userPokeTeam}
+                  savePokemonToUser={this.savePokemonToUser}
+                  updateUserPokeTeam={this.updateUserPokeTeam}
+                  />
+                );
             }}
           />
         </main>
