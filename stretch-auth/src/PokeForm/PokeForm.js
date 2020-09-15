@@ -10,6 +10,7 @@ class PokeForm extends Component {
       pokemon: "",
       pokeName: ""
     }
+    this.id = this.props.slot.slice(4)
 
     this.handleChange = this.handleChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -32,7 +33,7 @@ class PokeForm extends Component {
               <label className='pokemon-label' htmlFor='pokemon'>
                 Pokemon
               </label>
-              <input type='text' id='pokemon' name="pokemon" placeholder='Choose A Pokemon' onChange={this.handleChange}>
+              <input type='text' id='pokemon' name="pokemon" placeholder={`Choose Pokemon #${this.props.slot.slice(4)}`} onChange={this.handleChange}>
               </input>
             </div>
             <button onClick={this.submitForm}>Catch</button>
