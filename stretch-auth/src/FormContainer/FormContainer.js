@@ -25,11 +25,14 @@ class FormContainer extends Component {
       return pokemon.name === selectedPokemon.toLowerCase() || pokemon.id === Number(selectedPokemon)
     })
     if (foundPokemon) {
-      const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: (pokeName !== '') ? pokeName : foundPokemon.name.toUpperCase()};
+      const caughtPokemon = {pokemon: foundPokemon.name, sprite: foundPokemon.sprite, name: (pokeName !== '') ? pokeName : this.capitalize(foundPokemon.name), id: foundPokemon.id};
       this.props.savePokemonToUser(caughtPokemon, slot);
       this.setState({[slot]: caughtPokemon}, () => this.updateUserPokeTeam());
     }
+  }
 
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   showPokeSprite(selectedPokemon, pokeName, slot) {
