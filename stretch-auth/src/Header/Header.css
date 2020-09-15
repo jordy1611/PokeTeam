@@ -5,6 +5,7 @@ A {text-decoration: none}
   min-height: 7em;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   border-bottom: double 1em #E19720;
   align-items: center;
 
@@ -37,7 +38,7 @@ A {text-decoration: none}
   font-weight: bold;
   color: #FAD61D;
   text-decoration: none;
-  margin:  .3em 0 0 .4em
+  margin:  .3em 0 0 -1.5em;
 }
 
 .page-name:hover {
@@ -65,9 +66,12 @@ A {text-decoration: none}
 
 .user-message {
   color: #FAD61D;
+  font-size: 1.8em;
+  margin: 1.8em 0 0 -3em;
 }
 
 .user-image {
-  width: 100px;
+  width: 6em;
   border-radius: 50%;
+  margin-top: 1em;
 }
