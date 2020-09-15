@@ -108,6 +108,6 @@ export const uncaughtPokemon = {
 }
 
 export const sampleUser = {
-       name: 'Testy Testerson',
-       img: 'https://lh3.googleusercontent.com/-QMmtLwax4TM/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnDz989ljTldIpbFhAoUdLAjNUHdQ/photo.jpg'
-    }
+ name: 'Testy Testerson',
+ img: 'https://lh3.googleusercontent.com/-QMmtLwax4TM/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnDz989ljTldIpbFhAoUdLAjNUHdQ/photo.jpg'
+}

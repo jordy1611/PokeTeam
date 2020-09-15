@@ -20,11 +20,11 @@ describe('FormContainer', () => {
       />
     )
 
-    const pokeInputs = screen.getAllByPlaceholderText('Choose A Pokemon')
+
     const pokeNameInputs = screen.getAllByPlaceholderText('Name Your Pokemon')
     const catchButtons = screen.getAllByRole('button')
 
-    expect(pokeInputs).toHaveLength(6)
+
     expect(pokeNameInputs).toHaveLength(6)
     expect(catchButtons).toHaveLength(6)
   })
@@ -40,10 +40,10 @@ describe('FormContainer', () => {
       />
     )
 
-    const pokeInputs = screen.queryAllByPlaceholderText('Choose A Pokemon')
+    const catchButtons = screen.queryAllByRole('button')
     const pokeSprites = screen.getAllByText('Click To Release')
 
-    expect(pokeInputs).toHaveLength(0)
+    expect(catchButtons).toHaveLength(0)
     expect(pokeSprites).toHaveLength(6)
   })
 
@@ -58,10 +58,10 @@ describe('FormContainer', () => {
       />
     )
 
-    const pokeInputs = screen.queryAllByPlaceholderText('Choose A Pokemon')
+    const catchButtons = screen.getAllByRole('button')
     const pokeSprites = screen.getAllByText('Click To Release')
 
-    expect(pokeInputs).toHaveLength(5)
+    expect(catchButtons).toHaveLength(5)
     expect(pokeSprites).toHaveLength(1)
   })
 
@@ -76,9 +76,10 @@ describe('FormContainer', () => {
       />
     )
 
-    const pokeInputs = screen.getAllByPlaceholderText('Choose')
-    const pokeNameInputs = screen.getAllByPlaceholderText('Name Your Pokemon')
+
+    const pokeNameInput1 = screen.getByPlaceholderText('Name Pokemon #1')
     const catchButtons = screen.getAllByRole('button')
+    const catchButton1 = catchButtons[0]
 
     expect(pokeInputs).toHaveLength(6)
     expect(pokeNameInputs).toHaveLength(6)
