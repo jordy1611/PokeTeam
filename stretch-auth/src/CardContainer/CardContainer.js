@@ -15,18 +15,21 @@ const CardContainer = (props) => {
       { props.currentUser.name && !hasTeam &&
         <div className='no-team-display'>
           <p className='no-team-message'>You Don't Have A PokeTeam</p>
-          <Link to='/poke-forms'><button className='no-team-button'>Make a Poke Team!</button></Link>
+          <Link to='/poke-forms'><button className='edit-team-button'>Make a PokeTeam!</button></Link>
         </div>
       }
       { props.currentUser.name && hasTeam &&
-        <section className='poke-cards'>
-          <PokeCard pokemon={props.userPokeTeam.slot1}/>
-          <PokeCard pokemon={props.userPokeTeam.slot2}/>
-          <PokeCard pokemon={props.userPokeTeam.slot3}/>
-          <PokeCard pokemon={props.userPokeTeam.slot4}/>
-          <PokeCard pokemon={props.userPokeTeam.slot5}/>
-          <PokeCard pokemon={props.userPokeTeam.slot6}/>
-        </section>
+        <div>
+          <Link to='/poke-forms'><button className='edit-team-button'>Edit Your PokeTeam!</button></Link>
+          <section className='poke-cards'>
+            <PokeCard pokemon={props.userPokeTeam.slot1}/>
+            <PokeCard pokemon={props.userPokeTeam.slot2}/>
+            <PokeCard pokemon={props.userPokeTeam.slot3}/>
+            <PokeCard pokemon={props.userPokeTeam.slot4}/>
+            <PokeCard pokemon={props.userPokeTeam.slot5}/>
+            <PokeCard pokemon={props.userPokeTeam.slot6}/>
+          </section>
+        </div>
       }
     </section>
   )
