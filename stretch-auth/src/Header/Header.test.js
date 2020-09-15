@@ -63,7 +63,27 @@ describe('Header', () => {
     expect(logout).toBeInTheDocument()
   })
 
+  it('should render the default header when a user logs out', () => {
+    const mockLogOutUser = jest.fn()
+    render(
+      <MemoryRouter>
+        <Header 
+          currentUserName={sampleUser.name}    
+          currentUserImg={sampleUser.img}
+          logOutCurrentUser={mockLogOutUser}    
+        />
+      </MemoryRouter>
+    )
+    const welcomeMessage = screen.getByRole('heading', {name: 'Welcome Testy Testerson'})
+    const googleAcctImg = screen.getByRole('img', {name:'Your google account user icon'})
+    const logout = screen.getByRole('button', {name: 'Log Out'})
+    expect(welcomeMessage).toBeInTheDocument()
+    expect(googleAcctImg).toBeInTheDocument()
+    expect(logout).toBeInTheDocument()
 
+    fireEvent.click(logout)
+    expect(mockLogOutUser).toHaveBeenCalledTimes(1)
+  })
 
 
 
