@@ -36,6 +36,7 @@ export const pokeTeam = {
     id: 1
     }
 }
+
 export const indPokeTeam = {
   slot1: {
     pokemon: 'bulbasaur',
@@ -46,18 +47,11 @@ export const indPokeTeam = {
     slot2: {},
     slot3: {},
     slot4: {},
-    slot5: {},
+    slot5: {} ,
     slot6: {}
 }
 
-export const caughtPokemon = {
-  pokemon: 'bulbasaur',
-  sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-  name: 'Toby',
-  id: 1
-}
-
-export const uncaughtPokemon = [
+export const uncaughtPokemons = [
   {
     name: "bulbasaur",
     id: 1,
@@ -106,8 +100,14 @@ export const uncaughtPokemon = [
   }
 ]
 
+export const uncaughtPokemon = {
+  name: "bulbasaur",
+  id: 1,
+  sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+  types: []
+}
+
 export const sampleUser = {
        name: 'Testy Testerson',
        img: 'https://lh3.googleusercontent.com/-QMmtLwax4TM/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnDz989ljTldIpbFhAoUdLAjNUHdQ/photo.jpg'
     }
-
