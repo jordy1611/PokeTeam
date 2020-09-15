@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, waitFor, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Header from '../Header/Header'
 import { MemoryRouter } from 'react-router-dom'
@@ -28,7 +28,7 @@ describe('Header', () => {
 
   })
 
-  it('should render the Header on page load with a user\'s name and image icon', () => {
+  it('should render the Header with a user\'s name and image icon when logged in', () => {
     
     render(
       <MemoryRouter>
@@ -53,6 +53,7 @@ describe('Header', () => {
     expect(welcomeMessage).toBeInTheDocument()
     expect(googleAcctImg).toBeInTheDocument()
     expect(logout).toBeInTheDocument()
+
   })
 
 
