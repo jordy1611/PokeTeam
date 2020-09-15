@@ -1,12 +1,9 @@
-// error message rendering, on button press just in pokemon field
 import React from 'react';
 import FormContainer from './FormContainer.js'
 import { MemoryRouter } from 'react-router-dom';
 import { pokeTeam, indPokeTeam, uncaughtPokemons, sampleUser } from '../testData.js';
 import { screen, fireEvent, render, waitFor } from '@testing-library/react';
-// import dataFetcher from '../dataFetcher.js';
 import '@testing-library/jest-dom';
-// jest.mock('../dataFetcher.js');
 
 describe('FormContainer', () => {
   it('should render 6 login forms when a user has no poke team' , () => {
