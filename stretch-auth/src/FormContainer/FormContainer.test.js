@@ -77,11 +77,9 @@ describe('FormContainer', () => {
     )
 
 
-    const catchButtons = screen.getAllByRole('button')
-    const pokeNameInputs = screen.getAllByPlaceholderText('Name Your Pokemon')
     const pokeInput1 = screen.getByPlaceholderText('Choose Pokemon #1')
-    const catchButton1 = catchButtons[0]
-    const pokeNameInput1 = pokeNameInputs[0]
+    const catchButton1 = screen.getAllByRole('button')[0]
+    const pokeNameInput1 = screen.getAllByPlaceholderText('Name Your Pokemon')[0]
 
     expect(pokeInput1).toBeInTheDocument()
     expect(catchButton1).toBeInTheDocument()
@@ -96,6 +94,29 @@ describe('FormContainer', () => {
 
     expect(pokeSprite).toBeInTheDocument()
     expect(pokeName).toBeInTheDocument()
+  })
+
+  it('should render a pokemon sprite clicking the catch button' , () => {
+    render(
+      <FormContainer
+      currentUser={sampleUser}
+      allPokemon={uncaughtPokemons}
+      userPokeTeam={{}}
+      savePokemonToUser={jest.fn()}
+      updateUserPokeTeam={jest.fn()}
+      />
+    )
+
+
+    const catchButton1 = screen.getAllByRole('button')[0]
+
+    expect(catchButton1).toBeInTheDocument()
+
+    fireEvent.click(catchButton1)
+
+    // const errorMessage = screen.getByText('Invalid Pokemon name or PokeDex number.')
+
+    // expect(errorMessage).toBeInTheDocument()
   })
 
 })
