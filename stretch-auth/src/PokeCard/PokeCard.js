@@ -1,6 +1,6 @@
 import React from 'react';
 import './PokeCard.css'
-
+import pokeBallIcon from '../assets/pokeball.png'
 const PokeCard = (props) => {
   return (
     <section>
@@ -10,7 +10,8 @@ const PokeCard = (props) => {
         <p>{props.pokemon.pokemon}</p>
         <p>id</p>
         <img src={props.pokemon.sprite}/>
-      </article>) ||
+        <img src={pokeBallIcon} />
+        </article>) ||
       <article className='poke-card'></article>
     }
     </section>
