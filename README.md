@@ -1,8 +1,9 @@
 # Stretch-Auth
 **Mod 3 Pair Project**  
 
-**Authors**
-* Jordan Shryock
+### Authors
+
+**Jordan Shryock**
  * [GitHub](https://github.com/jordy1611)
  * [LinkedIn](https://www.linkedin.com/in/jordan-shryock-6a48b9113/)
 
