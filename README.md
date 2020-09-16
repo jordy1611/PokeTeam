@@ -42,6 +42,17 @@ PokeTeam is an application which allows users to login using a google account an
 * User sees a loading page first time visiting the page
 ![page loading](./stretch-auth/src/assets/loading.gif)
 
+* If a user does not have a poketeam they are prompted to build one
+![user prompt](./stretch-auth/src/assets/PokePrompt.png)
+
+* User can login in using their Google account
+![google login display](./stretch-auth/src/assets/Google.png)
+
+* A user can catch a pokemon by typing in it's pokemon id number or name. User can also give the pokemon a name.
+![catching](./stretch-auth/src/assets/catching.gif)
+
+* A user can release a pokemon by clicking it's poke sprite/image.
+![releasing](./stretch-auth/src/assets/release.gif)
 
 ### Credits
 All Pokemon data from [PokeApi](https://pokeapi.co/)
