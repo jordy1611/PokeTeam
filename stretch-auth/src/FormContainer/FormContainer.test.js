@@ -109,9 +109,9 @@ describe('FormContainer', () => {
 
     fireEvent.click(catchButton1)
 
-    // const errorMessage = screen.getByText('Invalid Pokemon name or PokeDex number.')
+    const errorMessage = screen.getByText('Invalid Pokemon name or PokeDex number.')
 
-    // expect(errorMessage).toBeInTheDocument()
+    expect(errorMessage).toBeInTheDocument()
   })
 
 })

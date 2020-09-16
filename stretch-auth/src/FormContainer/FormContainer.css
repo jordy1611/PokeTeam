@@ -10,15 +10,12 @@ A {text-decoration: none}
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 2em;
-  /* padding: 0 5em; */
 }
 
 .poke-sprite {
   width: 24em;
   height: 24em;
   margin: 0 0 0 0;
-  /* border-radius: 50%; */
-  /* background-color: white; */
   margin-top: 1em;
   margin-bottom: .3em;
   z-index: -;
@@ -46,10 +43,6 @@ A {text-decoration: none}
   font-weight: bold;
   margin-top: -2em;
 }
-
-/* .release-sprite-text > .poke-sprite:hover  {
-  opacity: 1;
-} */
 
 @keyframes rotation {
   50% {

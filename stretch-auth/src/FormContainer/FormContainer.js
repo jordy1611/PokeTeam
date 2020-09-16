@@ -119,7 +119,7 @@ class FormContainer extends Component {
 }
 
 FormContainer.propTypes = {
-  currentUser: PropTypes.string,
+  currentUser: PropTypes.object,
   allPokemon: PropTypes.array,
   userPokeTeam: PropTypes.object,
   savePokemonToUser: PropTypes.func,
@@ -127,9 +127,3 @@ FormContainer.propTypes = {
 }
 
 export default FormContainer
-
-// {(this.state.slot1.pokemon &&
-//   <PokeForm allPokemon={this.props.allPokemon} showPokemon={this.showPokemon} slot={"slot1"}/>
-// ) ||
-//
-// }
