@@ -51,10 +51,10 @@ Users can login using their gmail account. Once logged in they can access a form
 * If a user does not have a poketeam they are prompted to build one
 ![user prompt](./stretch-auth/src/assets/PokePrompt.png)
 
-* A user can catch a pokemon by typing in it's pokemon id number or name. User can also give the pokemon a name.
+* A user can catch a pokemon by typing in its pokemon id number or name. User can also give the pokemon a name.
 ![catching](./stretch-auth/src/assets/catching.gif)
 
-* A user can release a pokemon by clicking it's poke sprite/image.
+* A user can release a pokemon by clicking its poke sprite/image.
 ![releasing](./stretch-auth/src/assets/release.gif)
 
 * User can view their PokeTeam on the homepage
