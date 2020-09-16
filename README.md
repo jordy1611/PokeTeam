@@ -20,9 +20,9 @@
  * [LinkedIn](https://www.linkedin.com/in/naomi-ware-083332b8/)
  
 ### Overview  
-PokeTeam is an application which allows users to login using a google account and build a team picked from over 800 Pokemon. It is a 4-person, 1 week project which involved the developers to self-teach a new technology (Google Firebase) and impliment an Api of our choosing. We were interested in the massive database of Pokemon information from PokeApi and the opportunity to import, filter and use such a large and complex data model. We were also extremely excited to style the page, as a Pokemon themed page allows for some creative freedoms.
+PokeTeam is an application which allows users to login using a google account and build a team picked from over 800 Pokemon. It is a 4-person, 1 week project which involved the developers to self-teach a new technology (Google Firebase) and impliment an Api of our choosing. We were interested in the massive database of Pokemon information from PokeApi and the opportunity to import, filter and use such a large and complex data model. We were also extremely excited to style the application, as a Pokemon themed page allows for some creative freedoms.
 
-Users can login using their gmail account. Once logged in they can access a form page where they can build & edit their PokeTeam. Users can then view their PokeTeam on the homepage. The PokeTeam displayed on the homepage dynamically changes as the user adds and removes pokemon to their team.
+Users can login using their gmail account. Once logged in they can access a form page where they can build & edit their PokeTeam. Users can then view their PokeTeam on the homepage. The PokeTeam displayed on the homepage dynamically changes as the user adds or releases Pokemon.
 
 ### Technologies and Tools Used
 - React
