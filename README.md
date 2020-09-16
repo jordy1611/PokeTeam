@@ -1,5 +1,4 @@
-# Stretch-Auth
-**Mod 3 Pair Project**  
+# PokeTeam
 
 ### Authors
 
