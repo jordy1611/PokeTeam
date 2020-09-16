@@ -13,6 +13,7 @@
  
  **Naomi Ware**  
  * [GitHub](https://github.com/nware1066)
+ * [LinkedIn](https://www.linkedin.com/in/naomi-ware-083332b8/)
 ### Overview  
 PokeTeam is an application which allows users to login using a google account and build a team picked from over 800 Pokemon. This was the first project at Turing to impliment a new technology (Google Firebase) with and API of our choosing (PokeAPI). 
 
