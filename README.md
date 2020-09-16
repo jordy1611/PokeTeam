@@ -39,8 +39,8 @@ PokeTeam is an application which allows users to login using a google account an
 
 ### App Demo
 
-* A user can cry deeply
-![user crying](src/assets/)
+* User sees a loading page first time visiting the page
+![page loading](./stretch-auth/src/assets/loading.gif)
 
 
 ### Credits
