@@ -55,6 +55,6 @@ PokeTeam is an application which allows users to login using a google account an
 ![releasing](./stretch-auth/src/assets/release.gif)
 
 ### Credits
-All Pokemon data from [PokeApi](https://pokeapi.co/)
-Icons made by [Smashicons](Smashicons) via [Flaticon](www.flaticon.com)
-Icons made by [Roundicons Freebies](https://www.flaticon.com/authors/roundicons-freebies) via [Flaticon](www.flaticon.com)
+* All Pokemon data from [PokeApi](https://pokeapi.co/)
+* Icons made by [Smashicons](Smashicons) via [Flaticon](www.flaticon.com)
+* Icons made by [Roundicons Freebies](https://www.flaticon.com/authors/roundicons-freebies) via [Flaticon](www.flaticon.com)
