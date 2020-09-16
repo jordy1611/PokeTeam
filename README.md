@@ -54,6 +54,9 @@ PokeTeam is an application which allows users to login using a google account an
 * A user can release a pokemon by clicking it's poke sprite/image.
 ![releasing](./stretch-auth/src/assets/release.gif)
 
+* User can view their PokeTeam on the homepage
+![Poke Team](./stretch-auth/src/assets/PokeCards.png)
+
 ### Credits
 * All Pokemon data from [PokeApi](https://pokeapi.co/)
 * Icons made by [Smashicons](Smashicons) via [Flaticon](www.flaticon.com)
