@@ -55,7 +55,7 @@ PokeTeam is an application which allows users to login using a google account an
 ![releasing](./stretch-auth/src/assets/release.gif)
 
 * User can view their PokeTeam on the homepage
-![Poke Team](./stretch-auth/src/assets/PokeCards.png)
+![Poke Team](./stretch-auth/src/assets/Screen Shot 2020-09-15 at 5.51.25 PM.png)
 
 ### Credits
 * All Pokemon data from [PokeApi](https://pokeapi.co/)
