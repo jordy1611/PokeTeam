@@ -8,14 +8,14 @@ import { MemoryRouter } from 'react-router-dom';
 jest.mock('../apiCalls')
 
 describe('App', () => {
-  beforeEach( () => {
-    getSinglePokemonData.mockResolvedValueOnce({uncaughtPokemon})
+  // beforeEach( () => {
+  //   getSinglePokemonData.mockResolvedValueOnce({uncaughtPokemon})
     render(
       <MemoryRouter>
         <App />
       </MemoryRouter>
     )
-  })
+  // })
 
   it('should render a header on page load', () => {
     const img = screen.getByRole('img', {name: 'pikachu icon'})
