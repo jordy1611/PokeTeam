@@ -2,9 +2,9 @@
 **Mod 3 Pair Project**  
 
 **Authors**
-- Jordan Shryock
- - [GitHub](https://github.com/jordy1611)
- - [LinkedIn](https://www.linkedin.com/in/jordan-shryock-6a48b9113/)
+* Jordan Shryock
+ * [GitHub](https://github.com/jordy1611)
+ * [LinkedIn](https://www.linkedin.com/in/jordan-shryock-6a48b9113/)
 
 ### Overview  
 PokeTeam is an application which allows users to login using a google account and build a team picked from over 800 Pokemon. This was the first project at Turing to impliment a new technology (Google Firebase) with and API of our choosing (PokeAPI). 
