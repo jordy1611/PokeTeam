@@ -28,6 +28,7 @@ Users can login using their gmail account. Once logged in they can access a form
 - React
 - React Router
 - Jest
+- OAuth
 - Google Firebase
 - Git VCS
 - GitHub Projects
